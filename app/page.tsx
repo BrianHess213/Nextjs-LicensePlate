@@ -8,7 +8,7 @@ export default function Page() {
       <div className=''>
       <section className="p-10 bg-gray-50 dark:bg-gray-800 ">
               <h2 className=" text-2xl font-bold text-gray-900 dark:text-white">
-                Sign in to License Plate
+                Sign In
               </h2>
               <form className="mt-8 space-y-6" action="#">
                 <div>
