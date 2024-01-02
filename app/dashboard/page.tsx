@@ -1,6 +1,6 @@
 export default function Page() {
   return (
-   <p>Dashboard Page!!</p>
+   <p className="h-screen flex items-center justify-center">Dashboard Page Coming Soon!!</p>
     
   )
 }

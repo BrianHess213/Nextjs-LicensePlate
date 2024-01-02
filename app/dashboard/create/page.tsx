@@ -1,3 +1,10 @@
+
+
+import CreatePage from '../../ui/pages/Create';
+
+
 export default function Create() {
-    return <p>Create Page</p>;
-  }
+
+  return  <CreatePage />
+    
+}

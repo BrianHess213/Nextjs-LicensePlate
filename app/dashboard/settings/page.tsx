@@ -1,3 +1,3 @@
 export default function Home() {
-    return <p>Setting Page</p>;
+    return <p className="h-screen flex items-center justify-center">Setting Page Coming Soon!!</p>;
   }

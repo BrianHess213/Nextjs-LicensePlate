@@ -1,6 +1,6 @@
 export default function Users()
 {
     return(
-        <p>User Page!!</p>
+        <p className="h-screen flex items-center justify-center">User Page Coming Soon!!</p>
     )
 }
