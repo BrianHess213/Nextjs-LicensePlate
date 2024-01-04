@@ -5,7 +5,7 @@ export async function GET(request: Request) {
   try {
          const item = await prisma.items.findUnique({
             where: {
-                id: 1,
+                id: 2,
             },
           })
     return NextResponse.json({ item }, { status: 200 });
