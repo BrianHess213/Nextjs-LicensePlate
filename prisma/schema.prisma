@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+  previewFeatures = ["fullTextSearch"]
 }
 
 datasource db {
@@ -19,8 +19,6 @@ model items {
 
 
 }
-
-@@fulltext([casegtin])
 
 
 model User {

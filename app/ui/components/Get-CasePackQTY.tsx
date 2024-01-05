@@ -14,7 +14,7 @@ export default function GetItem() {
   if (isLoading) return <div>loading...</div>
   return (
     <>
-      <div className="flex justify-center">{data.result.casepackqty}</div>
+      <div className="flex justify-center">{data.result[0].casepackqty}</div>
     </>
   )
 }

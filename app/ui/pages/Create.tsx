@@ -5,6 +5,8 @@ import CurrentDate from '../../ui/components/CurrentDate';
 import PrintButton from '../../ui/components/PrintButton';
 import GetItem from '../../ui/components/Get-Item';
 import GetCasePackQTY from '../../ui/components/Get-CasePackQTY';
+import UserName from '../../ui/components/user-name';
+
 
 
 
@@ -64,7 +66,7 @@ export default function Create() {
 
 
       <div className="text-center grid grid-cols-2 grid-flow-col gap-4 ">
-        <div className="bg-red-500 p-3 ">Name</div>
+        <UserName />
         <CurrentDate />
       </div>
 
