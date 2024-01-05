@@ -7,7 +7,7 @@ export default async function Home() {
   const session = await getSession();
 
   if (session?.user) {
-    redirect("https://nextjs-license-plate-osut1jjrg-brianhess213.vercel.app/dashboard");
+    redirect("https://nextjs-license-plate.vercel.app/dashboard");
   }
 
   return (
