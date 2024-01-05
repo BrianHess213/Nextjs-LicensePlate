@@ -3,6 +3,9 @@ import Image from "next/image"
 
 import CurrentDate from '../../ui/components/CurrentDate';
 import PrintButton from '../../ui/components/PrintButton';
+import GetItem from '../../ui/components/Get-Item';
+import GetCasePackQTY from '../../ui/components/Get-CasePackQTY';
+
 
 
 
@@ -15,7 +18,8 @@ export default function Create() {
         <h1 className="text-center text-[48px] p-5">License Plate</h1>
       <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
         <div className="mb-6">
-          <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-red-900 dark:text-black">Item Number</label>
+  
+          <GetItem />
           <input type="text" id="default-input" className="text-sm rounded-lg block w-full p-2.5 text-center" placeholder="Scan Item"></input>
         </div>
 
@@ -44,7 +48,7 @@ export default function Create() {
       </div>
 
       <div className="flex justify-center">Case QTY</div>
-      <div className="flex justify-center">48</div>
+      <GetCasePackQTY />
       <div className="flex justify-center">Eaches</div>
       <div className="flex justify-center">0</div>
 

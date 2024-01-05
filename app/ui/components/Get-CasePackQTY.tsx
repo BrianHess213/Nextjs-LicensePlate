@@ -14,7 +14,7 @@ export default function GetItem() {
   if (isLoading) return <div>loading...</div>
   return (
     <>
-      <div className="block mb-2 text-sm font-medium text-red-900 dark:text-black">{data.result.itemname}</div>
+      <div className="flex justify-center">{data.result.casepackqty}</div>
     </>
   )
 }
