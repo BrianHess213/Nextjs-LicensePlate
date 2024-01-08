@@ -20,6 +20,7 @@ export default function BarcodeInputComponent() {
       event.preventDefault();
 
       try {
+        //const response = await fetch("/api/fetch-item", {method: "POST", body: "1"})
         const response = await fetch('/api/fetch-item', { // Your API route
           method: 'POST',
           headers: {

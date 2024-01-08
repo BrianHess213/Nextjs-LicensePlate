@@ -26,7 +26,7 @@ export default function Create() {
       <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
         <div className="mb-6">
   
-          
+          <GetItem />
           <ItemComponent />
         </div>
 
@@ -41,7 +41,7 @@ export default function Create() {
       </div>
 
       <div className="flex justify-center">Case QTY</div>
-      
+      <GetCasePackQTY />
       <div className="flex justify-center">Eaches</div>
       <CaseCalculated />
 

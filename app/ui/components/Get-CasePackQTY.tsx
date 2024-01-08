@@ -1,20 +1,19 @@
 'use client'
 
-import useSWR from 'swr'
+import useSWR from 'swr';
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
-
 export default function GetItem() {
-  const { data, isLoading, error } = useSWR('', fetcher)
+  const { data, error } = useSWR('', fetcher);
 
-  //console.log(data.item.itemname);
+  if (error) return <div>Failed to load.</div>;
+  if (!data) return <div>Loading...</div>; // Correctly handle loading state
 
-  if (error) return <div>failed to load</div>
-  if (isLoading) return <div>loading...</div>
+  // Make sure 'result' and 'itemname' are the expected response keys
   return (
-    <>
-      <div className="flex justify-center">{data.result[0].casepackqty}</div>
-    </>
-  )
+    <div className="block mb-2 text-sm font-medium text-red-900 dark:text-black">
+      {data.result?.[0]?.casepackqty ?? 'Item name not available'}
+    </div>
+  );
 }

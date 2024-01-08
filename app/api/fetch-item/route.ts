@@ -1,26 +1,33 @@
 import prisma from '../../lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+//import { NextRequest, NextResponse } from 'next/server'
 
-export default async function post(req: NextApiRequest, res: NextApiResponse) {
-
-  if (req.method === 'POST') {
+export async function POST(req: NextApiRequest, res: NextApiResponse) {
+  // const hi = await req.body;
+  // console.log(hi);
+  // return Response.json({ data: `New hi ${hi}` })  
     try {
-      const { barcode } = req.body;
+      const hi = await req.body.barcode;
+      const hello = await req.body;
+
+      
 
       const result = await prisma.items.findMany({
-        where: { casegtin: barcode },
+        where: { casegtin: "1" },
       });
 
       // Correctly return the response using `res.status().json()`
-      res.status(200).json({ result });
+      //res.status(200).json({ hi });
+      return Response.json({ hi }, { status: 201 });
     } catch (error) {
       // Correctly handle errors with `res.status().json()`
-      res.status(500).json({ error: error.message });
+      return Response.json({ error: error }, { status: 500 });
+
     }
-  } else {
-    // Correctly handle other methods
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end('Method Not Allowed');
-  }
+ 
+
+
+
 }
+
