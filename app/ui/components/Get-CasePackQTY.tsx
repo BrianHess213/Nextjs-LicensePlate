@@ -6,7 +6,7 @@ const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 
 export default function GetItem() {
-  const { data, isLoading, error } = useSWR('/api/fetch-item', fetcher)
+  const { data, isLoading, error } = useSWR('', fetcher)
 
   //console.log(data.item.itemname);
 

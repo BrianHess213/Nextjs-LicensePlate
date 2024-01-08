@@ -3,17 +3,17 @@ import React, { useState } from 'react';
 import Image from "next/image"
 
 
-import CurrentDate from '../../ui/components/CurrentDate';
-import PrintButton from '../../ui/components/PrintButton';
-import GetItem from '../../ui/components/Get-Item';
-import GetCasePackQTY from '../../ui/components/Get-CasePackQTY';
-import UserName from '../components/User/user-name';
-import CaseCalculated from '../../ui/components/CaseCalculator';
-import CaseQTY from '../../ui/components/CaseQTY';
-import ItemComponent from '../components/Item';
+import CurrentDate from '../../../ui/components/WithoutDatabase/CurrentDate';
+import PrintButton from '../../../ui/components/WithoutDatabase/PrintButton';
+import GetItem from '../../../ui/components/WithoutDatabase/Get-Item';
+import GetCasePackQTY from '../../../ui/components/WithoutDatabase/Get-CasePackQTY';
+import UserName from '../../../ui/components/User/user-name';
+import CaseCalculated from '../../../ui/components/WithoutDatabase/CaseCalculator';
+import CaseQTY from '../../../ui/components/WithoutDatabase/CaseQTY';
+import ItemComponent from '../../../ui/components/WithoutDatabase/Item';
 
 
-import { CaseQtyProvider } from '../components/CaseQtyContext'; 
+import { CaseQtyProvider } from '../../components/WithoutDatabase/CaseQtyContext'; 
 
 
 export default function Create() {
@@ -41,7 +41,7 @@ export default function Create() {
       </div>
 
       <div className="flex justify-center">Case QTY</div>
-      
+      <GetCasePackQTY />
       <div className="flex justify-center">Eaches</div>
       <CaseCalculated />
 
