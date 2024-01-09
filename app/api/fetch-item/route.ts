@@ -1,23 +1,16 @@
+import { NextResponse } from 'next/server';
 import prisma from '../../lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 //import { NextRequest, NextResponse } from 'next/server'
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req,res) {
 
-    if (req.method === 'POST') {
-        // Process the POST request
-        const data = req.body;
-        console.log('Received data:', data);
-    
-        // Send an appropriate response back to the client
-        res.status(200).json({ message: 'Data received successfully', data });
-      } else {
-        // Handle any other HTTP methods
-        res.setHeader('Allow', ['POST']);
-        //res.status(405).end(`Method ${req.method} Not Allowed`);
-      }
+ const data = await req.json;
 
+ console.log(data);
+
+ return NextResponse.json(data);
 
 }
 

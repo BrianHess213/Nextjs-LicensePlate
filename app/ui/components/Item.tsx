@@ -27,7 +27,7 @@ export default function BarcodeInputComponent() {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ barcode: "Hello JSON" }), // Send the barcode value
+          body: JSON.stringify({ barcode: inputValue }), // Send the barcode value
         });
 
         if (response.ok) {
