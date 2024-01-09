@@ -1,10 +1,10 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import prisma from '../../lib/prisma';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 //import { NextRequest, NextResponse } from 'next/server'
 
-export async function POST(req,res) {
+export async function POST(req: NextRequest, res: NextResponse) {
 
  const data = await req.json;
 
