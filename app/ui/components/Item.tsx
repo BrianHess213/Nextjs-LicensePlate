@@ -1,26 +1,25 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
 import Image from "next/image"
 
 export default function BarcodeInputComponent() {
   const [inputValue, setInputValue] = useState('');
   
   // In Item file
-    const TestingVariable = "I'm Not the JSON you were expecting LOL";
+  const TestingVariable = "I'm Not the JSON you were expecting LOL";
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
-  const handleKeyDown = async (event) => {
+  const handleKeyDown = async (event: KeyboardEvent<HTMLInputElement>) => {
     // Check if the Enter key was pressed
     if (event.key === 'Enter') {
       // Prevent form submission if part of a form
       event.preventDefault();
 
       try {
-        //const response = await fetch("/api/fetch-item", {method: "POST", body: "1"})
         console.log("Before the Post Request", TestingVariable);
         const response = await fetch('/api/fetch-item', { // Your API route
           method: 'POST',
@@ -48,17 +47,16 @@ export default function BarcodeInputComponent() {
 
   return (
     <>
-     <div className="mb-6">
-      <input
-        type="text"
-        value={inputValue}
-        onChange={handleChange}
-        onKeyDown={handleKeyDown} // Handle the Enter key event
-        className="text-sm rounded-lg block w-full p-2.5 text-center"
-        placeholder="Scan barcode..."
-      />
+      <div className="mb-6">
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown} // Handle the Enter key event
+          className="text-sm rounded-lg block w-full p-2.5 text-center"
+          placeholder="Scan barcode..."
+        />
       </div>
-
 
       <Image
         src={`https://barcode.orcascan.com/?data=${inputValue}`}
@@ -67,9 +65,6 @@ export default function BarcodeInputComponent() {
         height={200}
         alt="Image of a barcode for Item Number"
       />
-
-
-
     </>
   );
 }
