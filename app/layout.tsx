@@ -19,7 +19,6 @@ export default function RootLayout({
     <html lang="en">
       <UserProvider>
         <body>
-          <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
           {children}
         </body>
       </UserProvider>
