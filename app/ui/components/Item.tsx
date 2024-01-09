@@ -7,7 +7,7 @@ export default function BarcodeInputComponent() {
   const [inputValue, setInputValue] = useState('');
   
   // In Item file
-
+    const TestingVariable = "I'm Not the JSON you were expecting LOL";
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -21,12 +21,13 @@ export default function BarcodeInputComponent() {
 
       try {
         //const response = await fetch("/api/fetch-item", {method: "POST", body: "1"})
+        console.log("Before the Post Request", TestingVariable);
         const response = await fetch('/api/fetch-item', { // Your API route
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ barcode: inputValue }), // Send the barcode value
+          body: JSON.stringify({ barcode: "Hello JSON" }), // Send the barcode value
         });
 
         if (response.ok) {
