@@ -5,15 +5,18 @@ import Image from "next/image"
 
 import CurrentDate from '../../../ui/components/WithoutDatabase/CurrentDate';
 import PrintButton from '../../../ui/components/WithoutDatabase/PrintButton';
-import GetItem from '../../../ui/components/WithoutDatabase/Get-Item';
-import GetCasePackQTY from '../../../ui/components/WithoutDatabase/Get-CasePackQTY';
-import UserName from '../../../ui/components/User/user-name';
-import CaseCalculated from '../../../ui/components/WithoutDatabase/CaseCalculator';
+import Item from '../../../ui/components/WithoutDatabase/Item';
 import CaseQTY from '../../../ui/components/WithoutDatabase/CaseQTY';
-import ItemComponent from '../../../ui/components/WithoutDatabase/Item';
+import CasePackQTY from '../../../ui/components/WithoutDatabase/CasePackQTY';
+import CaseCalculator from '../../../ui/components/WithoutDatabase/CaseCalculator';
+
+import { CaseQtyProvider } from '../../../ui/components/WithoutDatabase/CaseQtyContext'; 
+
+import UserName from '../../../ui/components/User/user-name';
 
 
-import { CaseQtyProvider } from '../../components/WithoutDatabase/CaseQtyContext'; 
+
+
 
 
 export default function Create() {
@@ -25,14 +28,15 @@ export default function Create() {
         <h1 className="text-center text-[48px] p-5">License Plate</h1>
       <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
         <div className="mb-6">
-  
-          
-          <ItemComponent />
+        <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-red-900 dark:text-black">Item Number</label>
+
+          <Item />
+      
         </div>
 
         <div className="mb-6">
             <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-red-900 dark:text-black">Case Count</label>
-            <CaseQTY />
+              <CaseQTY />
         </div>
 
       </div>
@@ -41,9 +45,9 @@ export default function Create() {
       </div>
 
       <div className="flex justify-center">Case QTY</div>
-      <GetCasePackQTY />
+      <CasePackQTY />
       <div className="flex justify-center">Eaches</div>
-      <CaseCalculated />
+      <CaseCalculator />
 
       <div className="text-center grid grid-cols-2 grid-flow-col gap-4 ">
         <UserName />
