@@ -2,7 +2,7 @@
 
 // CaseQtyContext.js
 
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, ReactNode } from 'react';
 
 // Create a context object with a default value.
 export const CaseQtyContext = createContext({
@@ -10,9 +10,14 @@ export const CaseQtyContext = createContext({
   setCaseQty: (qty: number) => {},
 });
 
+// Define interface for the provider props which includes children
+interface Props {
+  children: ReactNode;
+}
+
 // Create a provider component that will wrap the parts of your application
 // that need access to this context.
-export const CaseQtyProvider = ({ children }) => {
+export const CaseQtyProvider: React.FC<Props> = ({ children }) => {
   // This state will be shared with all components that consume the context.
   const [caseQty, setCaseQty] = useState<number>(0); // TypeScript type
 
