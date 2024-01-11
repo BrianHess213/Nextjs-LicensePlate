@@ -16,7 +16,7 @@ const CasePackQTY = () => {
     <>
       <div className="flex justify-center mb-6">
         <select 
-          className="appearance-none row-start-1 col-start-1 bg-slate-50"
+          className=" text-[25px] appearance-none row-start-1 col-start-1 bg-slate-50"
           value={casePackQTY} // Bind the select value to the casePackQTY state
           onChange={handleCaseQtyChange} // Update the state when there's a change
         >

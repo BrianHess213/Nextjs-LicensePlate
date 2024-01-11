@@ -27,15 +27,15 @@ export default function Create() {
     <main>
         <h1 className="text-center text-[48px] p-5">License Plate</h1>
       <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
-        <div className="mb-6">
-        <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-red-900 dark:text-black ">Item Number</label>
+        <div className="mb-1">
+        <label htmlFor="default-input" className="block mb-2 text-lg font-large dark:text-black ">Item Number</label>
 
           <Item />
       
         </div>
 
-        <div className="mb-6">
-            <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-red-900 dark:text-black">Case Count</label>
+        <div className="mb-1">
+            <label htmlFor="default-input" className="block mb-2 text-lg font-large dark:text-black ">Case Count</label>
               <CaseQTY />
         </div>
 
@@ -44,9 +44,9 @@ export default function Create() {
 
       </div>
 
-      <div className="flex justify-center">Case QTY</div>
+      <div className="flex justify-center text-lg font-large">Case QTY</div>
       <CasePackQTY />
-      <div className="flex justify-center">Eaches</div>
+      <div className="flex justify-center text-lg font-large">Eaches</div>
       <CaseCalculator />
 
       <div className="text-center grid grid-cols-2 grid-flow-col gap-4 ">

@@ -17,7 +17,7 @@ export default function Item() {
                     type="text"
                     value={inputValue}
                     onChange={handleChange}
-                    className="text-sm rounded-lg block w-full p-2.5 text-center"
+                    className="text-[48px] rounded-lg block w-full p-2.5 text-center"
                     placeholder="Input Item..."
                 />
             </div>

@@ -19,7 +19,7 @@ const CaseQTY = () => {
         id="case-qty-input"
         value={caseQty}
         onChange={handleCaseQtyChange}
-        className="text-sm rounded-lg block w-full p-2.5 text-center"
+        className="text-[48px] rounded-lg block w-full p-2.5 text-center"
         placeholder="Enter Case Quantity.."
       />
     </div>
