@@ -21,7 +21,7 @@ const CaseCalculated = () => {
  
   return (
     <>
-    <div className="flex justify-center">
+    <div className="text-[25px] flex justify-center">
       {caseValue !== undefined ? caseValue : 'No result'}
     </div>
 
