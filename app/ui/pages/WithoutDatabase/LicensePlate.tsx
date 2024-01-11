@@ -28,7 +28,7 @@ export default function Create() {
         <h1 className="text-center text-[48px] p-5">License Plate</h1>
       <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
         <div className="mb-6">
-        <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-red-900 dark:text-black">Item Number</label>
+        <label htmlFor="default-input" className="block mb-2 text-sm font-medium text-red-900 dark:text-black ">Item Number</label>
 
           <Item />
       

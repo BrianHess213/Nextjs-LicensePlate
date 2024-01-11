@@ -6,17 +6,17 @@ import React, { createContext, useState, ReactNode } from 'react';
 
 // Add TypeScript types for the context object, including the new value.
 type CaseQtyContextType = {
-  caseQty: number;
-  setCaseQty: (qty: number) => void;
-  casePackQTY: number;
-  setcasePackQTY: (qty: number) => void;
+  caseQty: string;
+  setCaseQty: (qty: string) => void;
+  casePackQTY: string;
+  setcasePackQTY: (qty: string) => void;
 };
 
 // Update the context object with a default value for casePackQTY and its setter.
 export const CaseQtyContext = createContext<CaseQtyContextType>({
-  caseQty: 0,
+  caseQty: '',
   setCaseQty: () => {},
-  casePackQTY: 0,
+  casePackQTY: '',
   setcasePackQTY: () => {},
 });
 
@@ -29,8 +29,8 @@ interface Props {
 // that need access to this context.
 export const CaseQtyProvider: React.FC<Props> = ({ children }) => {
   // This state will be shared with all components that consume the context.
-  const [caseQty, setCaseQty] = useState<number>(0);
-  const [casePackQTY, setcasePackQTY] = useState<number>(0);
+  const [caseQty, setCaseQty] = useState<string>('');
+  const [casePackQTY, setcasePackQTY] = useState<string>('');
 
   // Provide the context value to children with the new value and setter.
   return (
