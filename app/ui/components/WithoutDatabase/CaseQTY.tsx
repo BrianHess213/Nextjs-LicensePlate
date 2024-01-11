@@ -8,7 +8,7 @@ const CaseQTY = () => {
   const { caseQty, setCaseQty } = useContext(CaseQtyContext);
 
   const handleCaseQtyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCaseQty(Number(event.target.value) || 0); // Update the caseQty in the context
+    setCaseQty(String(event.target.value) || ''); // Update the caseQty in the context
   };
 
   return (
@@ -20,7 +20,7 @@ const CaseQTY = () => {
         value={caseQty}
         onChange={handleCaseQtyChange}
         className="text-sm rounded-lg block w-full p-2.5 text-center"
-        placeholder="Enter Case Quantity"
+        placeholder="Enter Case Quantity.."
       />
     </div>
     <div className="flex justify-around">

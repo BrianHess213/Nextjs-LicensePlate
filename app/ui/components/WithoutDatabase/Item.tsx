@@ -4,7 +4,7 @@ import React, { useState, ChangeEvent } from 'react';
 import Image from "next/image";
 
 export default function Item() {
-    const [inputValue, setInputValue] = useState('Item');
+    const [inputValue, setInputValue] = useState('');
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setInputValue(event.target.value);
