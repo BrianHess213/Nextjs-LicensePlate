@@ -3,16 +3,16 @@ import React, { useState } from 'react';
 import Image from "next/image"
 
 
-import CurrentDate from '../../../ui/components/WithoutDatabase/CurrentDate';
-import PrintButton from '../../../ui/components/WithoutDatabase/PrintButton';
-import Item from '../../../ui/components/WithoutDatabase/Item';
-import CaseQTY from '../../../ui/components/WithoutDatabase/CaseQTY';
-import CasePackQTY from '../../../ui/components/WithoutDatabase/CasePackQTY';
-import CaseCalculator from '../../../ui/components/WithoutDatabase/CaseCalculator';
+import CurrentDate from '../components/LP-Without-DB/CurrentDate';
+import PrintButton from '../components/LP-Without-DB/PrintButton';
+import Item from '../components/LP-Without-DB/Item';
+import CaseQTY from '../components/LP-Without-DB/CaseQTY';
+import CasePackQTY from '../components/LP-Without-DB/CasePackQTY';
+import CaseCalculator from '../components/LP-Without-DB/CaseCalculator';
 
-import { CaseQtyProvider } from '../../../ui/components/WithoutDatabase/CaseQtyContext'; 
+import { CaseQtyProvider } from '../components/LP-Without-DB/CaseQtyContext'; 
 
-import UserName from '../../../ui/components/User/user-name';
+import UserName from '../components/User/user-name';
 
 
 

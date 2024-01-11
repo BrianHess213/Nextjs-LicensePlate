@@ -3,7 +3,7 @@
 import Image from "next/image"
 import React, { useContext, useEffect, useState } from 'react';
 import useSWR from 'swr';
-import { CaseQtyContext } from '../../components/WithoutDatabase/CaseQtyContext'; // Adjust the import path as necessary
+import { CaseQtyContext } from './CaseQtyContext'; // Adjust the import path as necessary
 
 
 const CaseCalculated = () => {

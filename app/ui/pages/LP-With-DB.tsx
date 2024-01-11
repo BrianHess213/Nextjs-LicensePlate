@@ -3,17 +3,17 @@ import React, { useState } from 'react';
 import Image from "next/image"
 
 
-import CurrentDate from '../../ui/components/CurrentDate';
-import PrintButton from '../../ui/components/PrintButton';
-import GetItem from '../../ui/components/Get-Item';
-import GetCasePackQTY from '../../ui/components/Get-CasePackQTY';
+import CurrentDate from '../components/LP-With-DB/CurrentDate';
+import PrintButton from '../components/PrintButton';
+import GetItem from '../components/LP-With-DB/Get-Item';
+import GetCasePackQTY from '../components/LP-With-DB/Get-CasePackQTY';
 import UserName from '../components/User/user-name';
-import CaseCalculated from '../../ui/components/CaseCalculator';
-import CaseQTY from '../../ui/components/CaseQTY';
-import ItemComponent from '../components/Item';
+import CaseCalculated from '../components/LP-With-DB/CaseCalculator';
+import CaseQTY from '../components/LP-With-DB/CaseQTY';
+import ItemComponent from '../components/LP-With-DB/Item';
 
 
-import { CaseQtyProvider } from '../components/CaseQtyContext'; 
+import { CaseQtyProvider } from '../components/LP-With-DB/CaseQtyContext'; 
 
 
 export default function Create() {
