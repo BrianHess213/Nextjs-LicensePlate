@@ -4,13 +4,12 @@ import Image from "next/image"
 import React, { useContext } from 'react';
 import { CaseQtyContext } from '../WithoutDatabase/CaseQtyContext'; // Adjust the import path as necessary
 
-// ...
 
 const CasePackQTY = () => {
   const { casePackQTY, setcasePackQTY } = useContext(CaseQtyContext);
 
   const handleCaseQtyChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setcasePackQTY(event.target.value); // Update the casePackQTY in the context
+    setcasePackQTY(Number(event.target.value) || 0); // Update the casePackQTY in the context
   };
 
   return (

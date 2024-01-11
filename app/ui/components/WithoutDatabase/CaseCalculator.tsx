@@ -5,7 +5,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import useSWR from 'swr';
 import { CaseQtyContext } from '../../components/WithoutDatabase/CaseQtyContext'; // Adjust the import path as necessary
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 const CaseCalculated = () => {
   const { caseQty } = useContext(CaseQtyContext);
