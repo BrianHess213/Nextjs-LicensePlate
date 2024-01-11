@@ -8,7 +8,7 @@ const CaseQTY = () => {
   const { caseQty, setCaseQty } = useContext(CaseQtyContext);
 
   const handleCaseQtyChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCaseQty(String(event.target.value) || ''); // Update the caseQty in the context
+    setCaseQty(Number(event.target.value) || 0); // Update the caseQty in the context
   };
 
   return (
