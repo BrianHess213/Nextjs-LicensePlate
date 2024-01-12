@@ -23,10 +23,10 @@ export default function BarcodeInputComponent() {
         console.log("Before the Post Request", TestingVariable);
         const response = await fetch('/api/fetch-item', { // Your API route
           method: 'POST',
+          body: JSON.stringify({barcode: inputValue}),
           headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ barcode: inputValue }), // Send the barcode value
+            'content-type': 'text/plain'
+          }
         });
 
         if (response.ok) {
@@ -35,6 +35,7 @@ export default function BarcodeInputComponent() {
           console.log('Barcode processed:', data);
           // Optionally reset the input value
           //setInputValue('');
+         
         } else {
           // Handle errors
           console.error('Barcode processing error:', response.status);
@@ -47,6 +48,8 @@ export default function BarcodeInputComponent() {
 
   return (
     <>
+    
+    
       <div className="mb-6">
         <input
           type="text"
