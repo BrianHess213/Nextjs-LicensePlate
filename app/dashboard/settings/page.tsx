@@ -1,3 +1,24 @@
+
+
+import MonthColor from '../../ui/components/MonthColor'
+import YearColor from '../../ui/components/YearColor'
+
 export default function Setting() {
-    return <p className="h-screen flex items-center justify-center">Setting Page Coming Soon!!</p>;
-  }
+
+  return (
+    <main className="mt-10">
+
+      <p className="">Setting Page Coming Soon!!</p>
+
+      <div>
+      <MonthColor />
+      </div>
+      
+      <div>
+      <YearColor />
+      </div>
+     
+
+    </main>
+  )
+}
