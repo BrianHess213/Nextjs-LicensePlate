@@ -1,6 +1,6 @@
 
 
-import LicensePlate from '../../ui/pages/WithoutDatabase/LicensePlate';
+import LicensePlate from '../../ui/pages/LP-Without-DB';
 
 
 export default function Create() {

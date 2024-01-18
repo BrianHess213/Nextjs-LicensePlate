@@ -1,3 +1,17 @@
+
+
+
+import ColorPicker from '../../ui/components/ColorPicker'
+
 export default function Setting() {
-    return <p className="h-screen flex items-center justify-center">Setting Page Coming Soon!!</p>;
-  }
+
+  return (
+    <main className="mt-10">
+
+      <div>
+      <ColorPicker />
+      </div>
+     
+    </main>
+  )
+}

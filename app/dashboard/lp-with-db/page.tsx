@@ -1,6 +1,6 @@
 
 
-import CreatePage from '../../ui/pages/Create';
+import CreatePage from '../../ui/pages/LP-With-DB';
 
 
 export default function Create() {

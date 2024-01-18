@@ -3,7 +3,7 @@
 import Image from "next/image"
 import React, { useContext, useEffect, useState } from 'react';
 import useSWR from 'swr';
-import { CaseQtyContext } from '../components/CaseQtyContext'; // Adjust the import path as necessary
+import { CaseQtyContext } from '../LP-With-DB/CaseQtyContext'; // Adjust the import path as necessary
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 

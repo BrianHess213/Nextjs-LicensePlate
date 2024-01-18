@@ -2,7 +2,7 @@
 import { Dropdown } from "flowbite-react";
 import Image from "next/image"
 import React, { useContext } from 'react';
-import { CaseQtyContext } from '../WithoutDatabase/CaseQtyContext'; // Adjust the import path as necessary
+import { CaseQtyContext } from './CaseQtyContext'; // Adjust the import path as necessary
 
 
 const CasePackQTY = () => {

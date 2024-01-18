@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import React, { useContext } from 'react';
-import { CaseQtyContext } from '../components/CaseQtyContext'; // Adjust the import path as necessary
+import { CaseQtyContext } from './CaseQtyContext'; // Adjust the import path as necessary
 
 const CaseQTY = () => {
   const { caseQty, setCaseQty } = useContext(CaseQtyContext);
@@ -19,18 +19,20 @@ const CaseQTY = () => {
         id="case-qty-input"
         value={caseQty}
         onChange={handleCaseQtyChange}
-        className="text-lg rounded-lg block w-full p-2.5 text-center"
-        placeholder="Enter Case Quantity"
+        className="text-[48px] rounded-lg block w-full p-2.5 text-center"
+        placeholder="Enter Case Quantity.."
       />
     </div>
-
+    <div className="flex justify-around">
     <Image
           src={`https://barcode.orcascan.com/?data=${caseQty}`}
           unoptimized
           width={200}
           height={200}
+         
           alt="Image of a barcode for Case Count"
         />
+        </div>
 
 
 

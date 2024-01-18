@@ -7,10 +7,7 @@ export default async function UserName() {
     return (
         <>
             {!!session?.user && (
-                <div className="p-3">
-                    {session.user.name}
-                   
-                </div>
+                <span>{session.user.name}</span>
             )}
         </>
     )
