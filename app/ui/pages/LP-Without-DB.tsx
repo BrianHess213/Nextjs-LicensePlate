@@ -9,26 +9,25 @@ import Item from '../components/LP-Without-DB/Item';
 import CaseQTY from '../components/LP-Without-DB/CaseQTY';
 import CasePackQTY from '../components/LP-Without-DB/CasePackQTY';
 import CaseCalculator from '../components/LP-Without-DB/CaseCalculator';
-import MonthColor from '../components/MonthColor'
+import MonthColorChange from '../components/MonthColorChange'
+import YearColorChange from '../components/YearColorChange'
+
 
 import { CaseQtyProvider } from '../components/LP-Without-DB/CaseQtyContext'; 
 
 import UserName from '../components/User/user-name';
 
 
-
-
-
-
 export default function Create() {
-
+  
 
   return (
     <CaseQtyProvider>
     <main>
-        <div className='bg-red-500 w-full h-24'>
-        <h1 className="text-center text-[48px] p-5">License Plate</h1>
-        </div>
+       
+      <MonthColorChange />
+
+
       <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
         <div className="mb-1">
         <label htmlFor="default-input" className="block mb-2 text-lg font-large dark:text-black ">Item Number</label>
@@ -52,14 +51,14 @@ export default function Create() {
       <div className="flex justify-center text-lg font-large">Eaches</div>
       <CaseCalculator />
 
-      <div className="bg-teal-500 w-full h-16 text-center grid grid-cols-2 grid-flow-col gap-4 ">
+      <div id='yearColor' className="w-full h-16 text-center grid grid-cols-2 grid-flow-col gap-4 ">
         <UserName />
         <CurrentDate />
       </div>
+    
+      <YearColorChange />
 
         <PrintButton />
-
-        <MonthColor />
 
     </main>
     </CaseQtyProvider>
