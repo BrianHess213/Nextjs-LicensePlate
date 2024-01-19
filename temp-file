@@ -1,0 +1,45 @@
+'use client'
+import Image from "next/image"
+
+import Print from '../../../ui/components/PrintButton'
+
+
+export default function TargetBOL() {
+
+    return (
+        <main className="mt-10">
+
+
+
+            <div className="mt-11 print:text-xl screen:text-sm">I’ll look big on paper but compact on screen!</div>
+
+            <div className="relative">
+
+                
+                <div className="print:w-full screen:w-50">
+                
+                    <Image
+                        src={`/Target_BOL.png`}
+                        unoptimized
+                        width={500}
+                        height={500}
+                        className=''
+                        alt="Targer BOL"
+                    />
+                    <p className="absolute top-12 left-14 text-[9px]">1/19/2024 </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div className="p-0">
+                <Print />
+            </div>
+
+
+        </main>
+    )
+}
