@@ -1,46 +1,35 @@
 'use client'
 
-import * as fs from 'fs';
-import { BLANK_PDF, type Template } from '@pdfme/common';
-import { generate } from '@pdfme/generator';
+import PrintButton from '../../../ui/components/PrintButton';
+import Image from "next/image";
 
 
-const template: Template = {
-    basePdf: BLANK_PDF,
-    schemas: [
-        {
-          a: {
-            type: 'text',
-            position: { x: 0, y: 0 },
-            width: 10,
-            height: 10,
-          },
-          b: {
-            type: 'text',
-            position: { x: 10, y: 10 },
-            width: 10,
-            height: 10,
-          },
-          c: {
-            type: 'text',
-            position: { x: 20, y: 20 },
-            width: 10,
-            height: 10,
-          },
-        },
-      ],
-};
 
-const inputs = [{a: 'a1', b: 'b1', c: 'c1' }];
+export default function TargetBOL() {
 
-generate({template, inputs }).then((pdf) =>{
+  return (
+    <>
 
-    console.log(pdf);
+      <div className="grid grid-cols-3 divide-x">
 
-    // Browser
-  const blob = new Blob([pdf.buffer], { type: 'application/pdf' });
-  window.open(URL.createObjectURL(blob));
+        <div className='print:hidden mt-20 flex justify-start items-start'>
+          <p>fields go here</p>
+        </div>
 
-  //Node.js
-  fs.writeFileSync(path.join(__dirname, `test.pdf`), pdf);
-});
+        <div className='flex justify-end items-end'>
+          <Image
+            src={`/Target_BOL.png`}
+            unoptimized
+            width={700}
+            height={500}
+            className='mt-10'
+            alt="Image of a barcode for Item Number"
+          />
+        </div>
+      </div>
+
+      <PrintButton />
+
+    </>
+  )
+}
