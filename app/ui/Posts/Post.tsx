@@ -1,4 +1,3 @@
-// ./components/Post.tsx
 
 import Image from "next/image"
 import { PortableText } from "@portabletext/react";
