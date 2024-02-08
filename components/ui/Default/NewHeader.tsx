@@ -1,5 +1,5 @@
 
-import UserProfilePic from '../components/User/user-profilepic';
+import UserProfilePic from '../../User/user-profilepic';
 import 'dotenv/config'
 
 

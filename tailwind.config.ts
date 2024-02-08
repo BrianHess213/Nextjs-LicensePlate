@@ -29,8 +29,9 @@ const config: Config = {
     },
   },
   plugins: [
-    require("flowbite"),
-    //require('@tailwindcss/typography')
+    
+    require('@tailwindcss/typography'),
+    require("flowbite/plugin")
   ],
   
 }

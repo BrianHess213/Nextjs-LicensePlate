@@ -1,7 +1,7 @@
 
 
 
-import ColorPicker from '../../ui/components/ColorPicker'
+import ColorPicker from '@/components/ColorPicker'
 
 export default function Setting() {
 

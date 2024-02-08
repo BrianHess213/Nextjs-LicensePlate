@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import Image from "next/image"
 
 
-import CurrentDate from '../../ui/components/LP-With-DB/CurrentDate';
-import PrintButton from '../../ui/components/PrintButton';
-import GetItem from '../../ui/components/LP-With-DB/Get-Item';
-import GetCasePackQTY from '../../ui/components/LP-With-DB/Get-CasePackQTY';
-import UserName from '../../ui/components/User/user-name';
-import CaseCalculated from '../../ui/components/LP-With-DB/CaseCalculator';
-import CaseQTY from '../../ui/components/LP-With-DB/CaseQTY';
-import ItemComponent from '../../ui/components/LP-With-DB/Item';
+import CurrentDate from '@/components/LP-With-DB/CurrentDate';
+import PrintButton from '@/components/PrintButton';
+import GetItem from '@/components/LP-With-DB/Get-Item';
+import GetCasePackQTY from '@/components/LP-With-DB/Get-CasePackQTY';
+import UserName from '@/components/User/user-name';
+import CaseCalculated from '@/components/LP-With-DB/CaseCalculator';
+import CaseQTY from '@/components/LP-With-DB/CaseQTY';
+import ItemComponent from '@/components/LP-With-DB/Item';
 
 
-import { CaseQtyProvider } from '../../ui/components/LP-With-DB/CaseQtyContext'; 
+import { CaseQtyProvider } from '../../../components/LP-With-DB/CaseQtyContext'; 
 
 
 export default function Create() {

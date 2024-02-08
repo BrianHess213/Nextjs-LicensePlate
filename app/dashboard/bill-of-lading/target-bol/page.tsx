@@ -1,6 +1,6 @@
 'use client'
 
-import PrintButton from '../../../ui/components/PrintButton';
+import PrintButton from '@/components/PrintButton';
 import Image from "next/image";
 
 

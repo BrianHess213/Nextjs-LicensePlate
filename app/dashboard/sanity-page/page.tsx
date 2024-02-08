@@ -2,7 +2,7 @@
 
 import { SanityDocument } from "next-sanity";
 
-import Posts from "@/app/ui/Posts/Posts";
+import Posts from "@/components/Posts";
 import { loadQuery } from "@/sanity/lib/store";
 import { POSTS_QUERY } from "@/sanity/lib/queries";
 

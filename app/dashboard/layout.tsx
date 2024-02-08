@@ -1,6 +1,6 @@
-import NewHeader from '@/app/ui/default/NewHeader';
-import NewSideNav from '@/app/ui/default/NewSideNav';
-import NewFooter from '@/app/ui/default/NewFooter';
+import NewHeader from '@/components/ui/Default/NewHeader';
+import NewSideNav from '@/components/ui/Default/NewSideNav';
+import NewFooter from '@/components/ui/Default/NewFooter';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (

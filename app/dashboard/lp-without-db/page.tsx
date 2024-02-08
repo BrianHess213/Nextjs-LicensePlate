@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import Image from "next/image"
 
 
-import CurrentDate from '../../ui/components/LP-Without-DB/CurrentDate';
-import PrintButton from '../../ui/components/LP-Without-DB/PrintButton';
-import Item from '../../ui/components/LP-Without-DB/Item';
-import CaseQTY from '../../ui/components/LP-Without-DB/CaseQTY';
-import CasePackQTY from '../../ui/components/LP-Without-DB/CasePackQTY';
-import CaseCalculator from '../../ui/components/LP-Without-DB/CaseCalculator';
-import MonthColorChange from '../../ui/components/MonthColorChange'
-import YearColorChange from '../../ui/components/YearColorChange'
+import CurrentDate from '@/components/LP-Without-DB/CurrentDate';
+import PrintButton from '@/components/LP-Without-DB/PrintButton';
+import Item from '@/components/LP-Without-DB/Item';
+import CaseQTY from '@/components/LP-Without-DB/CaseQTY';
+import CasePackQTY from '@/components/LP-Without-DB/CasePackQTY';
+import CaseCalculator from '@/components/LP-Without-DB/CaseCalculator';
+import MonthColorChange from '@/components/MonthColorChange'
+import YearColorChange from '@/components/YearColorChange'
 
 
-import { CaseQtyProvider } from '../../ui/components/LP-Without-DB/CaseQtyContext'; 
+import { CaseQtyProvider } from '../../../components/LP-Without-DB/CaseQtyContext'; 
 
-import UserName from '../../ui/components/User/user-name';
+import UserName from '../../../components/User/user-name';
 
 
 export default function Create() {

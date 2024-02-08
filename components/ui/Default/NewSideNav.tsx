@@ -1,7 +1,7 @@
 
 import { Suspense } from "react";
 import 'dotenv/config'
-import UserProfile from '../components/User/user-profile';
+import UserProfile from '../../User/user-profile';
 
 export default async function sideNav() {
 
