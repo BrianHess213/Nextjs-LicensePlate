@@ -1,5 +1,6 @@
 import {defineType, defineArrayMember} from 'sanity'
 
+
 /**
  * This is the schema type for block content used in the post document type
  * Importing this type into the studio configuration's `schema` property
@@ -39,6 +40,8 @@ export default defineType({
         decorators: [
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
+
+
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
