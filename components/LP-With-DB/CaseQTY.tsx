@@ -13,27 +13,25 @@ const CaseQTY = () => {
 
   return (
     <>
-    <div className="mb-6">
-      <input
-        type="number"
-        id="case-qty-input"
-        value={caseQty}
-        onChange={handleCaseQtyChange}
-        className="text-lg rounded-lg block w-full p-2.5 text-center"
-        placeholder="Enter Case Quantity"
-      />
-    </div>
-
-    <Image
+      <div className="mb-6">
+        <input
+          type="number"
+          id="case-qty-input"
+          value={caseQty}
+          onChange={handleCaseQtyChange}
+          className="peer block w-full rounded-md border border-gray-50 py-[9px] pl-10 text-sm outline-2 placeholder:text-gray-500 text-center"
+          placeholder="Enter Case Quantity"
+        />
+      </div>
+      <div className="flex justify-center">
+        <Image
           src={`https://barcode.orcascan.com/?data=${caseQty}`}
           unoptimized
           width={200}
           height={200}
           alt="Image of a barcode for Case Count"
         />
-
-
-
+      </div>
     </>
   );
 };

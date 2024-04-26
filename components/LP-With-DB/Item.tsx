@@ -3,11 +3,35 @@
 import React, { useState, ChangeEvent, KeyboardEvent } from 'react';
 import Image from "next/image"
 
-export default function BarcodeInputComponent() {
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import { useDebouncedCallback } from 'use-debounce';
+
+export default function BarcodeInputComponent({ placeholder }: { placeholder: string }) {
   const [inputValue, setInputValue] = useState('');
+
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
   
   // In Item file
   const TestingVariable = "I'm Not the JSON you were expecting LOL";
+
+
+     
+  const handleSearch = useDebouncedCallback((term) => {
+    console.log(`Searching... ${term}`);
+   
+    const params = new URLSearchParams(searchParams);
+    if (term) {
+      params.set('query', term);
+    } else {
+      params.delete('query');
+    }
+    replace(`${pathname}?${params.toString()}`);
+  }, 300);
+
+
+
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -50,24 +74,22 @@ export default function BarcodeInputComponent() {
     <>
     
     
-      <div className="mb-6">
-        <input
-          type="text"
-          value={inputValue}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown} // Handle the Enter key event
-          className="text-sm rounded-lg block w-full p-2.5 text-center"
-          placeholder="Scan barcode..."
-        />
-      </div>
+    <div className="relative flex flex-1 flex-shrink-0">
+            <label htmlFor="search" className="sr-only">
+                Search
+            </label>
+            <input
+                className="text-lg rounded-lg block w-full p-2.5 text-center"
+                placeholder={placeholder}
+                onChange={(e) => {
+                    handleSearch(e.target.value);
+                }}
+                defaultValue={searchParams.get('query')?.toString()}
+            />
+           
+        </div>
 
-      <Image
-        src={`https://barcode.orcascan.com/?data=${inputValue}`}
-        unoptimized
-        width={200}
-        height={200}
-        alt="Image of a barcode for Item Number"
-      />
+ 
     </>
   );
 }
