@@ -1,0 +1,56 @@
+{
+  "id": "mig_cokhlqlmc3pvbceam4l0",
+  "checksum": "1:891252ab575ca43a0e29252c91cc8f08da0320c9adc3a345107cb156766b8a7f",
+  "operations": [
+    {
+      "addTable": {
+        "table": "ItemSKU"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "Item_Name",
+          "type": "int"
+        },
+        "table": "ItemSKU"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "Description",
+          "type": "text"
+        },
+        "table": "ItemSKU"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "Case_Pack_QTY",
+          "type": "int"
+        },
+        "table": "ItemSKU"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "Case_GTIN",
+          "type": "int"
+        },
+        "table": "ItemSKU"
+      }
+    },
+    {
+      "addColumn": {
+        "column": {
+          "name": "End_Of_Life",
+          "type": "bool"
+        },
+        "table": "ItemSKU"
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Brian-Hess-s-workspace-78s9i2.us-west-2.xata.sh/db/Durham_DB",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
