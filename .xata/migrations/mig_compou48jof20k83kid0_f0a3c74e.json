@@ -1,0 +1,12 @@
+{
+  "id": "mig_compou48jof20k83kid0",
+  "parentID": "mig_cokhlqlmc3pvbceam4l0",
+  "checksum": "1:f0a3c74e46bab52116cc8aeb72b9e50c9461934902e7e89e50477fdf9fa9f4a0",
+  "operations": [
+    {
+      "addTable": {
+        "table": "CasePackQTY"
+      }
+    }
+  ]
+}

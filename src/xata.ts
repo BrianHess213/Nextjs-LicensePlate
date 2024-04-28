@@ -17,6 +17,7 @@ const tables = [
       { name: "End_Of_Life", type: "bool" },
     ],
   },
+  { name: "CasePackQTY", columns: [{ name: "Value", type: "int" }] },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -25,8 +26,12 @@ export type InferredTypes = SchemaInference<SchemaTables>;
 export type ItemSKU = InferredTypes["ItemSKU"];
 export type ItemSKURecord = ItemSKU & XataRecord;
 
+export type CasePackQTY = InferredTypes["CasePackQTY"];
+export type CasePackQTYRecord = CasePackQTY & XataRecord;
+
 export type DatabaseSchema = {
   ItemSKU: ItemSKURecord;
+  CasePackQTY: CasePackQTYRecord;
 };
 
 const DatabaseClient = buildClient();

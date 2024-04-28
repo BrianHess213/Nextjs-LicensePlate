@@ -17,14 +17,14 @@ export default function Item() {
                     type="text"
                     value={inputValue}
                     onChange={handleChange}
-                    className="text-[48px] rounded-lg block w-full p-2.5 text-center"
+                    className="text-[48px] rounded-lg border-none block w-full p-2.5 text-center"
                     placeholder="Input Item..."
                 />
             </div>
 
             <div className="flex justify-around">
                 <Image
-                    src={`https://barcode.orcascan.com/?data=${inputValue}`}
+                    src={`https://barcode.orcascan.com/?data=${inputValue || 0}`}
                     unoptimized
                     width={200}
                     height={200}
