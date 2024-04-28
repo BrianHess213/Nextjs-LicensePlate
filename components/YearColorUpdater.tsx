@@ -1,8 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
-import UserName from './User/user-profilepic';
-import CurrentDate from './LP-With-DB/CurrentDate';
+
 
 export default function YearColorUpdaterPage() {
   // Define a base year and year colors
