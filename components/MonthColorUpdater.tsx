@@ -14,8 +14,8 @@ export default function MonthColorUpdaterPage() {
         const monthColors = [
           "bg-red-400", "bg-green-400", "bg-blue-400",
           "bg-yellow-400", "bg-pink-400", "bg-purple-400",
-          "bg-red-700", "bg-green-700", "bg-blue-700",
-          "bg-yellow-700", "bg-pink-700", "bg-purple-700",
+          "bg-red-800", "bg-green-800", "bg-blue-800",
+          "bg-yellow-800", "bg-pink-800", "bg-purple-800",
         ];
         const monthIndex = (now.month - 1) % monthColors.length;
         setBgColor(monthColors[monthIndex]);

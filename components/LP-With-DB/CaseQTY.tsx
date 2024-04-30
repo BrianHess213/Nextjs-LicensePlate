@@ -20,6 +20,7 @@ const CaseQTY = () => {
           onChange={handleCaseQtyChange}
           className="text-4xl rounded-lg border-none block w-full p-2.5 text-center"
           placeholder="Case QTY"
+          required
         />
       </div>
       <div className="flex justify-center pt-1">

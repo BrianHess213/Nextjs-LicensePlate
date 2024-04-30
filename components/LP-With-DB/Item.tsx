@@ -34,6 +34,7 @@ export default function BarcodeInputComponent({ placeholder }: { placeholder: st
                     handleSearch(e.target.value);
                 }}
                 defaultValue={searchParams.get('query')?.toString()}
+                required
             />
         </div>
     </>

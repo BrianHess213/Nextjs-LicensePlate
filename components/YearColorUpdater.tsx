@@ -7,10 +7,10 @@ export default function YearColorUpdaterPage() {
   // Define a base year and year colors
   const baseYear = 2024; // Change this to your chosen starting year
   const yearColors = [
-    "bg-red-400", "bg-green-400", "bg-blue-400",
+    "bg-blue-400", "bg-green-400", "bg-red-400",
     "bg-yellow-400", "bg-pink-400", "bg-purple-400",
-    "bg-red-700", "bg-green-700", "bg-blue-700",
-    "bg-yellow-700", "bg-pink-700", "bg-purple-700",
+    "bg-blue-800", "bg-green-800", "bg-red-800",
+    "bg-yellow-800", "bg-pink-800", "bg-purple-800",
   ];
 
   const [bgColor, setBgColor] = useState('');

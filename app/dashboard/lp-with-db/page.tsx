@@ -25,11 +25,11 @@ export default async function Create({
 
   return (
     <main>
+
       <div className="pt-7">
-      <MonthColorUpdaterPage />
-
-
+        <MonthColorUpdaterPage />
       </div>
+
       <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
         <div className="mb-6">
           <div className="text-2xl">
@@ -70,7 +70,7 @@ export default async function Create({
 
       <div className='pt-3'>
         <PrintButton />
-        </div>
+      </div>
 
     </main>
   );
