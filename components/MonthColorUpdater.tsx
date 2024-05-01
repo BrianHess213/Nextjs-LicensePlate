@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { DateTime } from 'luxon';
 
 export default function MonthColorUpdaterPage() {
-  const [bgColor, setBgColor] = useState('bg-blue-400'); // Default background color
+  const [bgColor, setBgColor] = useState('bg-yellow-400'); // Default background color
 
   useEffect(() => {
     const checkMonthAndUpdateColor = () => {

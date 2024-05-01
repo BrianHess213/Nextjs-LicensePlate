@@ -6,6 +6,7 @@ import CaseQTY from '@/components/LP-With-DB/CaseQTY';
 import ItemComponent from '@/components/LP-With-DB/Item';
 import MonthColorUpdaterPage from "@/components/MonthColorUpdater";
 import YearColorUpdaterPage from "@/components/YearColorUpdater";
+import ReloadPages from "@/components/ReloadPage";
 
 import { getXataClient } from "@/src/xata"
 const xata = getXataClient();
@@ -16,62 +17,80 @@ export default async function Create({
   searchParams?: {
     query?: string,
   },
+
+
 }) {
 
-  const query = searchParams?.query || '';
+  let records;
 
-  const numGTIN = + query;
-  const records = await xata.db.ItemSKU.filter({ Case_GTIN: numGTIN || 0 }).getMany();
+  try {
 
-  return (
-    <main>
+    const query = searchParams?.query || '';
 
-      <div className="pt-7">
-        <MonthColorUpdaterPage />
-      </div>
+    const numGTIN = + query;
+    records = await xata.db.ItemSKU.filter({ Case_GTIN: numGTIN || 0 }).getMany();
 
-      <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
-        <div className="mb-6">
-          <div className="text-2xl">
-            {records[0].Item_Name}
-          </div>
+    return (
+      <main>
 
-          <ItemComponent placeholder='Scan box barcode!' />
-          <div className='flex justify-center pt-1'>
-            <Image
-              src={`https://barcode.orcascan.com/?data=${numGTIN}`}
-              unoptimized
-              width={200}
-              height={200}
-              alt="Image of a barcode for Item Number"
-            />
-          </div>
+        <div className="pt-7">
+          <MonthColorUpdaterPage />
         </div>
 
-        <div className="mb-6">
-          <label htmlFor="default-input" className="block text-2xl mb-1 font-medium text-gray-900 dark:text-black text-center">Case Count</label>
-          <CaseQTY />
+        <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
+          <div className="mb-6">
+            <div className="text-2xl">
+              {records[0].Item_Name}
+            </div>
+
+            <ItemComponent placeholder='Scan box barcode!' />
+            <div className='flex justify-center pt-1'>
+              <Image
+                src={`https://barcode.orcascan.com/?data=${numGTIN}`}
+                unoptimized
+                width={200}
+                height={200}
+                alt="Image of a barcode for Item Number"
+              />
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <label htmlFor="default-input" className="block text-2xl mb-1 font-medium text-gray-900 dark:text-black text-center">Case Count</label>
+            <CaseQTY />
+          </div>
+
+        </div>
+        <div className="flex justify-around ">
+
         </div>
 
-      </div>
-      <div className="flex justify-around ">
+        <div className="flex justify-center">Case QTY</div>
+        <div className='flex justify-center'>{records[0].Case_Pack_QTY}</div>
 
-      </div>
+        <div className="text-center grid grid-cols-2 grid-flow-col gap-4 ">
+          <UserName />
+          <CurrentDate />
+        </div>
 
-      <div className="flex justify-center">Case QTY</div>
-      <div className='flex justify-center'>{records[0].Case_Pack_QTY}</div>
+        <YearColorUpdaterPage />
 
-      <div className="text-center grid grid-cols-2 grid-flow-col gap-4 ">
-        <UserName />
-        <CurrentDate />
-      </div>
+        <div className='pt-3'>
+          <PrintButton />
+        </div>
 
-      <YearColorUpdaterPage />
+      </main>
+    );
 
-      <div className='pt-3'>
-        <PrintButton />
-      </div>
+  } catch (error) {
 
-    </main>
-  );
+     // Handle the error if one occurs
+  console.error('An error occurred:');
+  // Optionally, you might want to assign a default value to records in case of an error
+  records = [0]; // or set to null or any other appropriate value
+  console.log("Records Value", records);
+
+  }
+
+
 }
