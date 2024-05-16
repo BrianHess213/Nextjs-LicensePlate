@@ -1,6 +1,6 @@
 import Image from "next/image"
 import CurrentDate from '@/components/LP-With-DB/CurrentDate';
-import PrintButton from '@/components/PrintButton';
+import PrintButton from '@/components/DB_PrintButton';
 import UserName from '@/components/User/user-name';
 import CaseQTY from '@/components/LP-With-DB/CaseQTY';
 import ItemComponent from '@/components/LP-With-DB/Item';
