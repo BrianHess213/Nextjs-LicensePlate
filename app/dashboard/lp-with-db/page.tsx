@@ -83,6 +83,7 @@ export default async function Create({
         <div className='pt-3'>
           <PrintButton />
         </div>
+  
 
       </main>
     );
@@ -95,11 +96,8 @@ export default async function Create({
   records = [0]; // or set to null or any other appropriate value
   console.log("Records Value", records);
 
-  return (
-    <main>
-      <ReloadPages />
-    </main>
-  )
+    
+  
 
   }
 
