@@ -4,12 +4,14 @@ import PrintButton from '@/components/DB_PrintButton';
 import UserName from '@/components/User/user-name';
 import CaseQTY from '@/components/LP-With-DB/CaseQTY';
 import ItemComponent from '@/components/LP-With-DB/Item';
-import MonthColorUpdaterPage from "@/components/MonthColorUpdater";
-import YearColorUpdaterPage from "@/components/YearColorUpdater";
+import MonthColorUpdaterPage from "@/components/DB_MonthColorUpdater";
+import YearColorUpdaterPage from "@/components/DB_YearColorUpdater";
 import ReloadPages from "@/components/ReloadPage";
 
 import { getXataClient } from "@/src/xata"
 const xata = getXataClient();
+
+
 
 export default async function Create({
   searchParams,
@@ -21,6 +23,9 @@ export default async function Create({
 
 }) {
 
+  function helloworld(){
+
+  }
   let records;
 
   try {
@@ -31,9 +36,9 @@ export default async function Create({
     records = await xata.db.ItemSKU.filter({ Case_GTIN: numGTIN || 0 }).getMany();
 
     return (
-      <main>
+      <main className="py-10">
 
-        <div className="pt-7">
+        <div className="pb-8">
           <MonthColorUpdaterPage />
         </div>
 
@@ -65,10 +70,10 @@ export default async function Create({
 
         </div>
 
-        <div className="flex justify-center">Case QTY</div>
-        <div className='flex justify-center'>{records[0].Case_Pack_QTY}</div>
+        <div className="flex justify-center text-xl pt-10">Case QTY</div>
+        <div className='flex justify-center text-xl pb-10'>{records[0].Case_Pack_QTY}</div>
 
-        <div className="text-center grid grid-cols-2 grid-flow-col gap-4 ">
+        <div className="text-center text-xl grid grid-cols-2 grid-flow-col gap-4 ">
           <UserName />
           <CurrentDate />
         </div>
@@ -89,6 +94,12 @@ export default async function Create({
   // Optionally, you might want to assign a default value to records in case of an error
   records = [0]; // or set to null or any other appropriate value
   console.log("Records Value", records);
+
+  return (
+    <main>
+      <ReloadPages />
+    </main>
+  )
 
   }
 

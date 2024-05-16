@@ -19,6 +19,7 @@ export default function Item() {
                     onChange={handleChange}
                     className="text-[48px] rounded-lg border-none block w-full p-2.5 text-center"
                     placeholder="Input Item..."
+                    autoFocus
                 />
             </div>
 

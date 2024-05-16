@@ -13,7 +13,7 @@ export default async function Home() {
   const session = await getSession();
 
   if (session?.user) {
-    redirect(`${BaseURL}/dashboard/lp-without-db`);
+    redirect(`${BaseURL}/dashboard/lp-with-db`);
   }
 
   return (

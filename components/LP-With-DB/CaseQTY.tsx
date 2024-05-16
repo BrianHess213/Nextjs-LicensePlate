@@ -19,7 +19,7 @@ const CaseQTY = () => {
           value={caseQty}
           onChange={handleCaseQtyChange}
           className="text-4xl rounded-lg border-none block w-full p-2.5 text-center"
-          placeholder="Case QTY"
+          placeholder="Cases on Pallet"
           required
         />
       </div>
