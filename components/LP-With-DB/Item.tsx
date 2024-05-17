@@ -21,6 +21,7 @@ export default function BarcodeInputComponent({ placeholder }: { placeholder: st
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 
+  
   return (
     <>
     <div className="relative flex flex-1 flex-shrink-0">
@@ -28,6 +29,7 @@ export default function BarcodeInputComponent({ placeholder }: { placeholder: st
                 Search
             </label>
             <input
+            id="test-target"
                 className="text-4xl rounded-lg block w-full p-2.5 text-center "
                 placeholder={placeholder}
                 onChange={(e) => {
