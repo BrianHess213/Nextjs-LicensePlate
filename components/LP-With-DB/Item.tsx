@@ -18,6 +18,11 @@ export default function BarcodeInputComponent({ placeholder }: { placeholder: st
     } else {
       params.delete('query');
     }
+
+    if (term != null || undefined){
+      document.getElementById("test-target")?.blur();
+    }
+
     replace(`${pathname}?${params.toString()}`);
   }, 300);
 
