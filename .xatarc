@@ -1,5 +1,5 @@
 {
-  "databaseURL": "https://Brian-Hess-s-workspace-78s9i2.us-west-2.xata.sh/db/Durham_DB",
+  "databaseURL": "https://brianhess-s-workspace-51oml8.us-west-2.xata.sh/db/LicensePlate",
   "codegen": {
     "output": "src/xata.ts"
   }

@@ -15,7 +15,7 @@
     "@types/node": "20.5.7",
     "@vercel/postgres": "^0.5.1",
     "@xata.io/cli": "^0.15.10",
-    "@xata.io/client": "^0.29.4",
+    "@xata.io/client": "^0.29.5",
     "autoprefixer": "10.4.15",
     "axios": "^1.6.4",
     "bcrypt": "^5.1.1",

@@ -17,7 +17,6 @@ const tables = [
       { name: "End_Of_Life", type: "bool" },
     ],
   },
-  { name: "CasePackQTY", columns: [{ name: "Value", type: "int" }] },
 ] as const;
 
 export type SchemaTables = typeof tables;
@@ -26,19 +25,15 @@ export type InferredTypes = SchemaInference<SchemaTables>;
 export type ItemSKU = InferredTypes["ItemSKU"];
 export type ItemSKURecord = ItemSKU & XataRecord;
 
-export type CasePackQTY = InferredTypes["CasePackQTY"];
-export type CasePackQTYRecord = CasePackQTY & XataRecord;
-
 export type DatabaseSchema = {
   ItemSKU: ItemSKURecord;
-  CasePackQTY: CasePackQTYRecord;
 };
 
 const DatabaseClient = buildClient();
 
 const defaultOptions = {
   databaseURL:
-    "https://Brian-Hess-s-workspace-78s9i2.us-west-2.xata.sh/db/Durham_DB",
+    "https://brianhess-s-workspace-51oml8.us-west-2.xata.sh/db/LicensePlate",
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {
