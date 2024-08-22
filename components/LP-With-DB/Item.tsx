@@ -35,7 +35,7 @@ export default function BarcodeInputComponent({ placeholder }: { placeholder: st
             </label>
             <input
             id="test-target"
-                className="text-4xl rounded-lg block w-full p-2.5 text-center "
+                className="text-lg rounded-lg block w-full p-2.5 text-center "
                 placeholder={placeholder}
                 onChange={(e) => {
                     handleSearch(e.target.value);

@@ -23,9 +23,6 @@ export default async function Create({
 
 }) {
 
-  function helloworld(){
-
-  }
   let records;
 
   try {
@@ -44,12 +41,14 @@ export default async function Create({
 
         <div className="text-center p-5 grid grid-cols-2 grid-flow-col gap-4 ">
           <div className="mb-6">
-            <div className="text-2xl">
+            <ItemComponent placeholder='Scan box barcode!' />
+
+            <div className="text-6xl">
               {records[0].Item_Name}
             </div>
 
-            <ItemComponent placeholder='Scan box barcode!' />
             <div className='flex justify-center pt-1'>
+              
               <Image
                 src={`https://barcode.orcascan.com/?data=${numGTIN}`}
                 unoptimized
@@ -58,6 +57,7 @@ export default async function Create({
                 alt="Image of a barcode for Item Number"
               />
             </div>
+            
           </div>
 
           <div className="mb-6">
@@ -70,8 +70,8 @@ export default async function Create({
 
         </div>
 
-        <div className="flex justify-center text-xl pt-10">Case QTY</div>
-        <div className='flex justify-center text-xl pb-10'>{records[0].Case_Pack_QTY}</div>
+        <div className="flex justify-center text-2xl pt-10">Case QTY</div>
+        <div className='flex justify-center text-4xl pb-10'>{records[0].Case_Pack_QTY}</div>
 
         <div className="text-center text-xl grid grid-cols-2 grid-flow-col gap-4 ">
           <UserName />
@@ -90,11 +90,11 @@ export default async function Create({
 
   } catch (error) {
 
-     // Handle the error if one occurs
-  console.error('An error occurred:');
-  // Optionally, you might want to assign a default value to records in case of an error
-  records = [0]; // or set to null or any other appropriate value
-  console.log("Records Value", records);
+  //    // Handle the error if one occurs
+  // console.error('An error occurred:');
+  // // Optionally, you might want to assign a default value to records in case of an error
+  // records = [0]; // or set to null or any other appropriate value
+  // console.log("Records Value", records);
 
     
   
