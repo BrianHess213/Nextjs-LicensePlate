@@ -6,16 +6,23 @@ export async function POST(request: Request) {
 
 
     const body = await request.json();
-    console.log('body', body);
-  
+    
+
+    const Item = +body.Item_Name;
+    const description = body.Description;
+    const casePackQTY = +body.Case_Pack_QTY;
+    const caseGTIN = +body.Case_GTIN;
+    
+
     const records = await xata.db.ItemSKU.create({
-        Item_Name: body.item,
-        Description: body.description,
-        Case_Pack_QTY: body.casePackQTY,
-        Case_GTIN: body.caseGTIN,
+        Item_Name: Item,
+        Description: description,
+        Case_Pack_QTY: casePackQTY,
+        Case_GTIN: caseGTIN,
         End_Of_Life: body.endOfLife,
     
     });
+
 
     console.log(records);
     

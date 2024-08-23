@@ -16,11 +16,11 @@ import { toast } from 'react-hot-toast';
 
 export default function CreateItemPage() {
 
-    const [Item, setItem] = useState(''); // React state for the name input
-    const [Description, setDescription] = useState(''); // React state for the email input
-    const [CasePackQTY, setCasePackQTY] = useState('');
-    const [CaseGTIN, setCaseGTIN] = useState('');
-    const [EndOfLife, setEndOfLife] = useState('');
+    const [item, setItem] = useState(''); // React state for the name input
+    const [description, setDescription] = useState(''); // React state for the email input
+    const [casePackQTY, setCasePackQTY] = useState('');
+    const [caseGTIN, setCaseGTIN] = useState('');
+    const [endOfLife, setEndOfLife] = useState('');
 
 
 
@@ -29,11 +29,11 @@ export default function CreateItemPage() {
 
         try {
             const { data } = await axios.post('http://localhost:3000/api/additem', {
-                item: Item,
-                description: Description,
-                casePackQTY: CasePackQTY,
-                caseGTIN: CaseGTIN,
-                endOfLife: EndOfLife
+                Item_Name: item,
+                Description: description,
+                Case_Pack_QTY: casePackQTY,
+                Case_GTIN: caseGTIN,
+                End_Of_Life: endOfLife
 
             }, {
                 headers: {
@@ -67,20 +67,20 @@ export default function CreateItemPage() {
                 <div className='w-full'>
 
                     <Label htmlFor="text" value="Enter Item" />
-                    <TextInput id="Item" type="number" icon={MdOutlinePersonOutline} placeholder="Enter Item" value={Item} onChange={(e) => setItem(e.target.value)} required />
+                    <TextInput id="Item" type="number" icon={MdOutlinePersonOutline} placeholder="Enter Item" value={item} onChange={(e) => setItem(e.target.value)} required />
 
                     <Label htmlFor="text" value="Enter Description" />
-                    <TextInput id="Description" type="text" icon={HiMail} placeholder="Enter Description" value={Description} onChange={(e) => setDescription(e.target.value)} />
+                    <TextInput id="Description" type="text" icon={HiMail} placeholder="Enter Description" value={description} onChange={(e) => setDescription(e.target.value)} />
 
                     <Label htmlFor="text" value="Enter Case Pack Qty" />
-                    <TextInput id="CasePackQTY" type="number" icon={HiMail} placeholder="Enter Case Pack Qty" value={CasePackQTY} onChange={(e) => setCasePackQTY(e.target.value)} />
+                    <TextInput id="CasePackQTY" type="number" icon={HiMail} placeholder="Enter Case Pack Qty" value={casePackQTY} onChange={(e) => setCasePackQTY(e.target.value)} />
 
                     <Label htmlFor="text" value="Enter Case GTIN" />
-                    <TextInput id="CaseGTIN" type="number" icon={HiMail} placeholder="Enter Case GTIN" value={CaseGTIN} onChange={(e) => setCaseGTIN(e.target.value)} />
+                    <TextInput id="CaseGTIN" type="number" icon={HiMail} placeholder="Enter Case GTIN" value={caseGTIN} onChange={(e) => setCaseGTIN(e.target.value)} />
                     
                     <div className='pt-5'>
                         <Label className='px-2' htmlFor="checkbox" value="Enter End Of Life:" />
-                        <Checkbox id="EndOfLife" placeholder="Enter End Of Life" value={EndOfLife} />
+                        <Checkbox id="EndOfLife" placeholder="Enter End Of Life" value={endOfLife} />
                     </div>
 
                     <div className='flex justify-center py-5'>
