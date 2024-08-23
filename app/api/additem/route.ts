@@ -16,6 +16,8 @@ export async function POST(request: Request) {
         End_Of_Life: body.endOfLife,
     
     });
+
+    console.log(records);
     
  
     return Response.json({ message: 'Record Created'});
