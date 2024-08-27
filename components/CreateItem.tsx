@@ -3,9 +3,9 @@
 import React, { useState, FormEvent } from 'react';
 import axios from 'axios';
 import { Label, TextInput, Button, Checkbox } from 'flowbite-react';
-import { HiMail } from 'react-icons/hi';
-import { MdOutlinePersonOutline } from "react-icons/md";
-import { toast } from 'react-hot-toast';
+import { MdNumbers } from "react-icons/md";
+import { IoDocumentText } from "react-icons/io5";
+import Toastify from 'toastify-js'
 
 // Item_Name: body.item,
 // Description: body.description,
@@ -43,7 +43,20 @@ export default function CreateItemPage() {
             );
 
             // Show a success toast if the post request was successful
-            toast.success('Record Created');
+            Toastify({
+                text: "Record Created!",
+                duration: 3000,
+                newWindow: true,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "linear-gradient(to right,#32CD32, #00FF00)",
+                  color: "black",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
 
 
 
@@ -54,7 +67,20 @@ export default function CreateItemPage() {
             //const message = error.response?.data?.message || 'Unknown error occurred';
 
             // Show an error toast if the request fails
-            toast.error('Error: Reach out to support');
+            Toastify({
+                text: "Record Unsuccessful",
+                duration: 3000,
+                newWindow: true,
+                close: true,
+                gravity: "bottom", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                  background: "linear-gradient(to right,#FF474D, #C6373C)",
+                  color: "black",
+                },
+                onClick: function(){} // Callback after click
+              }).showToast();
         }
     }
 
@@ -66,17 +92,17 @@ export default function CreateItemPage() {
 
                 <div className='w-full'>
 
-                    <Label htmlFor="text" value="Enter Item" />
-                    <TextInput id="Item" type="number" icon={MdOutlinePersonOutline} placeholder="Enter Item" value={item} onChange={(e) => setItem(e.target.value)} required />
+                    <Label htmlFor="text" value="Item" />
+                    <TextInput id="Item" type="number" icon={MdNumbers} placeholder="Enter Item" value={item} onChange={(e) => setItem(e.target.value)} />
 
-                    <Label htmlFor="text" value="Enter Description" />
-                    <TextInput id="Description" type="text" icon={HiMail} placeholder="Enter Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+                    <Label htmlFor="text" value="Description" />
+                    <TextInput id="Description" type="text" icon={IoDocumentText} placeholder="Enter Description" value={description} onChange={(e) => setDescription(e.target.value)} />
 
-                    <Label htmlFor="text" value="Enter Case Pack Qty" />
-                    <TextInput id="CasePackQTY" type="number" icon={HiMail} placeholder="Enter Case Pack Qty" value={casePackQTY} onChange={(e) => setCasePackQTY(e.target.value)} />
+                    <Label htmlFor="text" value="Case Pack Qty" />
+                    <TextInput id="CasePackQTY" type="number" icon={MdNumbers} placeholder="Enter Case Pack Qty" value={casePackQTY} onChange={(e) => setCasePackQTY(e.target.value)} />
 
-                    <Label htmlFor="text" value="Enter Case GTIN" />
-                    <TextInput id="CaseGTIN" type="number" icon={HiMail} placeholder="Enter Case GTIN" value={caseGTIN} onChange={(e) => setCaseGTIN(e.target.value)} />
+                    <Label htmlFor="text" value="Case GTIN" />
+                    <TextInput id="CaseGTIN" type="number" icon={MdNumbers} placeholder="Enter Case GTIN" value={caseGTIN} onChange={(e) => setCaseGTIN(e.target.value)} />
                     
                     <div className='pt-5'>
                         <Label className='px-2' htmlFor="checkbox" value="Enter End Of Life:" />
@@ -90,6 +116,9 @@ export default function CreateItemPage() {
                 </div>
 
             </div>
+
+            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></link>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
         </form>
     );
 }

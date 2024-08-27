@@ -30,6 +30,7 @@ export default async function Create({
     const query = searchParams?.query || '';
 
     const numGTIN = + query;
+    console.log("This is on the Main Page Search", numGTIN);
     records = await xata.db.ItemSKU.filter({ Case_GTIN: numGTIN || 0 }).getMany();
 
     return (
@@ -48,7 +49,7 @@ export default async function Create({
             </div>
 
             <div className='flex justify-center pt-1'>
-              
+
               <Image
                 src={`https://barcode.orcascan.com/?data=${numGTIN}`}
                 unoptimized
@@ -57,7 +58,7 @@ export default async function Create({
                 alt="Image of a barcode for Item Number"
               />
             </div>
-            
+
           </div>
 
           <div className="mb-6">
@@ -83,21 +84,21 @@ export default async function Create({
         <div className='pt-3'>
           <PrintButton />
         </div>
-  
+
 
       </main>
     );
 
   } catch (error) {
 
-  //    // Handle the error if one occurs
-  // console.error('An error occurred:');
-  // // Optionally, you might want to assign a default value to records in case of an error
-  // records = [0]; // or set to null or any other appropriate value
-  // console.log("Records Value", records);
+    //    // Handle the error if one occurs
+    // console.error('An error occurred:');
+    // // Optionally, you might want to assign a default value to records in case of an error
+    // records = [0]; // or set to null or any other appropriate value
+    // console.log("Records Value", records);
 
-    
-  
+
+
 
   }
 
