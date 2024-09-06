@@ -30,7 +30,7 @@ export default async function Create({
     const query = searchParams?.query || '';
 
     const numGTIN = + query;
-    console.log("This is on the Main Page Search", numGTIN);
+    console.log("This is on the Main Page Search", numGTIN)
     records = await xata.db.ItemSKU.filter({ Case_GTIN: numGTIN || 0 }).getMany();
 
     return (
