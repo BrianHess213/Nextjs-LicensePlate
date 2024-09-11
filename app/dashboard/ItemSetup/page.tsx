@@ -1,11 +1,9 @@
 import CreateItemPage from "@/components/CreateItem"
 import SearchBar from "@/components/ItemSetupSearchBar"
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow, Button } from "flowbite-react";
-import DeleteItemPopUpPage from "@/components/DeleteItemPopUp";
-import ItemSetupPage from "@/app/dashboard/ItemSetup/page";
-import axios from 'axios';
 import { getXataClient } from "@/src/xata"
 import 'dotenv/config'
+
 
 
 const xata = getXataClient();
@@ -36,17 +34,6 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
 
 
         console.log(records);
-
-   
-        // axios.post('http://localhost:3000/api/deleteitem', {
-        //   body: records[0].id
-
-        // }, {
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // }
-        // );
        
 
         const itemNumber = parseInt(query, 10);
@@ -93,6 +80,14 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                         </TableBody>
                     </Table>
                 </div>
+                
+                <div className="flex justify-center">
+
+                
+
+                
+                </div>
+
             </main>
         );
     } catch (error) {
