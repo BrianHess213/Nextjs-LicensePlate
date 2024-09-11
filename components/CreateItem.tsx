@@ -6,12 +6,11 @@ import { Label, TextInput, Button, Checkbox } from 'flowbite-react';
 import { MdNumbers } from "react-icons/md";
 import { IoDocumentText } from "react-icons/io5";
 import Toastify from 'toastify-js'
+
+
 import 'dotenv/config'
-
-
-
-
 const BaseURL = process.env.BASE_URL;
+
 
 
 
@@ -25,11 +24,12 @@ export default function CreateItemPage() {
 
 
 
+
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         try {
-            const { data } = await axios.post(`${BaseURL}/dashboard/lp-without-db`, {
+            const { data } = await axios.post('https://nextjs-license-plate.vercel.app/api/additem' || 'http://localhost:3000/api/additem', {
                 Item_Name: item,
                 Description: description,
                 Case_Pack_QTY: casePackQTY,
