@@ -4,7 +4,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow, Button
 import { getXataClient } from "@/src/xata"
 import 'dotenv/config'
 import axios from 'axios';
-
+import Image from 'next/image'
 
 
 
@@ -36,12 +36,12 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
 
 
         console.log(records);
-       
+
 
         const itemNumber = parseInt(query, 10);
         console.log('Parsed item number:', itemNumber);
 
-       
+
         return (
             <main className="py-10">
                 <h1 className="flex justify-center text-4xl">Item Setup</h1>
@@ -64,7 +64,7 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                         <TableBody className="divide-y">
                             <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                                 <TableCell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                {records[0].Item_Name}
+                                    {records[0].Item_Name}
                                 </TableCell>
                                 <TableCell>{records[0].Description}</TableCell>
                                 <TableCell>{records[0].Case_GTIN}</TableCell>
@@ -74,7 +74,7 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                                     <a href={`${BaseURL}/dashboard/DeleteItem`} className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                                         Edit
                                     </a>
-                                    
+
                                 </TableCell>
                             </TableRow>
                             <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
@@ -82,14 +82,17 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                         </TableBody>
                     </Table>
                 </div>
-                
+
+                <h1 className="text-slate-950 text-xl text-center py-4">Pallet Stack</h1>
+
                 <div className="flex justify-center">
-
-                
-
-                
+                    <Image
+                        src="/7059.png"
+                        width={500}
+                        height={500}
+                        alt="Picture of the Pallets"
+                    />
                 </div>
-
             </main>
         );
     } catch (error) {
@@ -97,11 +100,11 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
         return (
             <main className="flex justify-center h-full items-center">
                 <div className="grid grid-cols-1 gap-5">
-                <h1 className="text-xl text-red-500 text-center">Failed To Fetch Item Data</h1>
-                <h1 className="text-xl text-red-500 text-center">Item Doesnt Exist Try Typing It In Again Or Adding The New Item.</h1>
+                    <h1 className="text-xl text-red-500 text-center">Failed To Fetch Item Data</h1>
+                    <h1 className="text-xl text-red-500 text-center">Item Doesnt Exist Try Typing It In Again Or Adding The New Item.</h1>
 
 
-                <Button href={`${BaseURL}/dashboard/ItemSetup`} pill>Return</Button>
+                    <Button href={`${BaseURL}/dashboard/ItemSetup`} pill>Return</Button>
 
                 </div>
             </main>
