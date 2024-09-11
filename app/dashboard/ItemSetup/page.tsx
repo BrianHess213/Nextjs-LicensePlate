@@ -3,6 +3,8 @@ import SearchBar from "@/components/ItemSetupSearchBar"
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow, Button } from "flowbite-react";
 import { getXataClient } from "@/src/xata"
 import 'dotenv/config'
+import axios from 'axios';
+
 
 
 

@@ -6,12 +6,13 @@ import { Label, TextInput, Button, Checkbox } from 'flowbite-react';
 import { MdNumbers } from "react-icons/md";
 import { IoDocumentText } from "react-icons/io5";
 import Toastify from 'toastify-js'
+import 'dotenv/config'
 
-// Item_Name: body.item,
-// Description: body.description,
-// Case_Pack_QTY: body.casePackQTY,
-// Case_GTIN: body.caseGTIN,
-// End_Of_Life: body.endOfLife,
+
+
+
+const BaseURL = process.env.BASE_URL;
+
 
 
 export default function CreateItemPage() {
@@ -28,7 +29,7 @@ export default function CreateItemPage() {
         event.preventDefault();
 
         try {
-            const { data } = await axios.post('http://localhost:3000/api/additem', {
+            const { data } = await axios.post(`${BaseURL}/dashboard/lp-without-db`, {
                 Item_Name: item,
                 Description: description,
                 Case_Pack_QTY: casePackQTY,
