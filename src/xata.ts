@@ -15,6 +15,11 @@ const tables = [
       { name: "Case_Pack_QTY", type: "int" },
       { name: "Case_GTIN", type: "int" },
       { name: "End_Of_Life", type: "bool" },
+      {
+        name: "Image",
+        type: "file[]",
+        "file[]": { defaultPublicAccess: true },
+      },
     ],
   },
 ] as const;

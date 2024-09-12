@@ -1,0 +1,16 @@
+{
+  "id": "mig_cqv5mafakoa46b4h86n0",
+  "parentID": "mig_cqv5m2fakoa46b4h86k0",
+  "checksum": "1:50d7db944465b8dd38266f0812cb290f80ad9fa050a674e4a58f6eb734e7a9a6",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "Image",
+          "type": "file[]"
+        },
+        "table": "ItemSKU"
+      }
+    }
+  ]
+}

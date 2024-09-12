@@ -1,0 +1,14 @@
+{
+  "id": "mig_crgvmmjfblbdt68pptvg",
+  "parentID": "mig_crgul0dqil5fora6k210",
+  "checksum": "1:e7d1564326f0b194984e88f05e3c3e29bbf8442ad60592d2cc4e78e1db578b84",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "Image",
+        "oldName": "PalletImage",
+        "table": "ItemSKU"
+      }
+    }
+  ]
+}

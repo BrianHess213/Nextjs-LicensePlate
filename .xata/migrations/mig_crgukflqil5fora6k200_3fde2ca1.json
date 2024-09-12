@@ -1,0 +1,13 @@
+{
+  "id": "mig_crgukflqil5fora6k200",
+  "parentID": "mig_cqv5mafakoa46b4h86n0",
+  "checksum": "1:3fde2ca1616fe63251ccd26a8d954589ed45d05dc8fcf8c7c1361fb6651e7400",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "Image",
+        "table": "ItemSKU"
+      }
+    }
+  ]
+}

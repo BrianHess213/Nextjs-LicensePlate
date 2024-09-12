@@ -1,0 +1,19 @@
+{
+  "id": "mig_crgul0dqil5fora6k210",
+  "parentID": "mig_crgukflqil5fora6k200",
+  "checksum": "1:c6c8b929a69e11f300164523f5c9503ba08014194cfce5bbb1f8a00a4b3ea72d",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "PalletImage",
+          "type": "file[]",
+          "file[]": {
+            "defaultPublicAccess": true
+          }
+        },
+        "table": "ItemSKU"
+      }
+    }
+  ]
+}
