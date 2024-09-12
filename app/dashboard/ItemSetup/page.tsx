@@ -1,4 +1,5 @@
 import CreateItemPage from "@/components/CreateItem"
+import DeleteItemPage from "@/components/DeleteItem";
 import SearchBar from "@/components/ItemSetupSearchBar"
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow, Button } from "flowbite-react";
 import { getXataClient } from "@/src/xata"
@@ -105,6 +106,11 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                 <div className="mt-20">
                     <h1 className="flex justify-center text-2xl py-5">Create Item</h1>
                     <CreateItemPage />
+                </div>
+
+                <div className="mt-20">
+                    <h1 className="flex justify-center text-2xl py-5">Delete Item</h1>
+                    <DeleteItemPage />
                 </div>
 
 

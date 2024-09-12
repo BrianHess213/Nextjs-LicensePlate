@@ -1,29 +1,18 @@
 import { getXataClient } from '@/src/xata';
 const xata = getXataClient();
 
-interface SearchParams {
-    searchParams?: {
-        item?: string
-    }
-}
 
-
-export async function POST(request: Request, { searchParams }: SearchParams) {
-
-       // Extract the item query parameter
-       const query = searchParams?.item || '';
-       console.log("This is in the Route.ts: ", query);
-
-       let Item = query;
-
-
+export async function POST(request: Request) {
 
 
     const body = await request.json();
     console.log('body', body);
     
-    // const record = await xata.db.ItemSKU.delete(Item.id);
+    const ItemID = body.Item_Name;
+
+    const record = await xata.db.ItemSKU.delete(ItemID);
+
  
-    return Response.json({ message: 'Record Deleted'});
+    return Response.json({ message: 'Recored Deleted'});
 
 }
