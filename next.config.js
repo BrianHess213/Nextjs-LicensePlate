@@ -5,6 +5,11 @@ const nextConfig = {
         {
           protocol: "https",
           hostname: "cdn.sanity.io",
+
+          protocol: 'https',
+          hostname: 'us-west-2.storage.xata.sh',
+        
+
         },
       ],
     },

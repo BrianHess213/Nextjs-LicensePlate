@@ -44,14 +44,10 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
 
         const imageUrl = records && records.length > 0 && records[0].Image && records[0].Image.length > 0 ? records[0].Image[0].url : '';
 
-
-
-
-
         return (
             <main className="py-10">
-                <h1 className="flex justify-center text-4xl">Item Setup</h1>
-                <CreateItemPage />
+                    <h1 className="flex justify-center text-2xl py-5 ">Search Item</h1>
+
                 <SearchBar placeholder="Search Item Here!" />
 
                 <div className="overflow-x-auto py-5">
@@ -91,24 +87,28 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
 
                 <h1 className="text-slate-950 text-xl text-center py-4">Pallet Stack</h1>
 
-                {imageUrl ? (
-                    <Image 
-                    src={imageUrl}
-                    width={500}
-                    height={500} 
-                    alt="Image from records" />
-                ) : (
-                    <p>No Image Available</p>
-                )}
+
 
                 <div className="flex justify-center">
-                    <Image
-                        src="/7059.png"
-                        width={500}
-                        height={500}
-                        alt="Picture of the Pallets"
-                    />
+
+                    {imageUrl ? (
+                        <Image
+                            src={imageUrl}
+                            width={500}
+                            height={500}
+                            alt="Image from records" />
+                    ) : (
+                        <p>No Image Available</p>
+                    )}
+
                 </div>
+                <div className="mt-20">
+                    <h1 className="flex justify-center text-2xl py-5">Create Item</h1>
+                    <CreateItemPage />
+                </div>
+
+
+
             </main>
         );
     } catch (error) {

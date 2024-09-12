@@ -40,7 +40,7 @@ export default async function sideNav() {
                         </svg>
 
 
-                        <span className="flex-1 ms-3 whitespace-nowrap">Item Setup</span>
+                        <span className="flex-1 ms-3 whitespace-nowrap">Item Search</span>
                      </a>
                   </li>
                   <div>
