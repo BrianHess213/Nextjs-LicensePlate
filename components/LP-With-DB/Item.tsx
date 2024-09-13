@@ -24,7 +24,7 @@ export default function BarcodeInputComponent({ placeholder }: { placeholder: st
     }
 
     replace(`${pathname}?${params.toString()}`);
-  }, 300);
+  }, 1000);
 
   
   return (

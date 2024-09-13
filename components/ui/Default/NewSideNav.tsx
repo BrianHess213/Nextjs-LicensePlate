@@ -1,7 +1,24 @@
 
 import { Suspense } from "react";
 import 'dotenv/config'
-import UserProfile from '../../User/user-profile';
+import UserProfileShortMenu from '../../User/user-shortmenu-profile';
+import UserProfile from "@/components/User/user-profile";
+import UserProfilePic from '@/components/User/user-shortmenu-profilepic';
+
+import {
+   Avatar,
+   Dropdown,
+   DropdownDivider,
+   DropdownHeader,
+   DropdownItem,
+   Navbar,
+   NavbarBrand,
+   NavbarCollapse,
+   NavbarLink,
+   NavbarToggle,
+} from "flowbite-react";
+import UserName from "@/components/User/user-name";
+import UserEmail from "@/components/User/user-email";
 
 export default async function sideNav() {
 
@@ -12,7 +29,45 @@ export default async function sideNav() {
       <main className="print:hidden">
 
          <aside id="logo-sidebar" className="fixed left-0 z-40 w-64 min-h-full pt-10 transition-transform -translate-x-full bg-slate-950 border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
-            <h1 className="text-2xl border-b-2 text-white pl-6 pb-3">Durham Brands</h1>
+            <div className="grid grid-cols-2 gap-3 justify-around">
+               <div className="w-48">
+                  <h1 className="text-2xl border-b-2 text-white pl-6 pb-3 z-10">Durham Brands</h1>
+               </div>
+
+               <div className="flex justify-end pr-1 z-0">
+                  <Navbar className="bg-slate-950">
+                     <Dropdown
+                        arrowIcon={false}
+                        inline
+                        label={
+                           <UserProfilePic />
+                        }
+                     >
+                        <DropdownHeader>
+                           <span className="block text-sm"><UserName /></span>
+                           <span className="block truncate text-sm font-medium"><UserEmail /></span>
+                        </DropdownHeader>
+
+                        {/* <DropdownItem href={`${BaseURL}/dashboard/lp-without-db`}>License Plate</DropdownItem>
+                           <DropdownItem href={`${BaseURL}/dashboard/lp-with-db`}>DB Licenes Plate</DropdownItem>
+                           <DropdownItem href={`${BaseURL}/dashboard/ItemSetup`}>Item Search</DropdownItem> */}
+
+                        <DropdownDivider />
+
+                        <Suspense fallback="Loading User Info...">
+                           <UserProfileShortMenu />
+                        </Suspense>
+
+
+                     </Dropdown>
+                     <NavbarToggle />
+                  </Navbar>
+               </div>
+
+
+            </div>
+
+
             <div className="h-full px-3 pb-4 overflow-y-auto ">
                <ul className="space-y-2 font-medium ">
                   <li>
@@ -51,14 +106,14 @@ export default async function sideNav() {
                      </Suspense>
 
                   </div>
-                  
+
                </ul>
-               
+
             </div>
 
             <span className="fixed bottom-1 p-3 block text-sm text-gray-200 sm:text-center dark:text-gray-400">© 2023 <a href={`${BaseURL}/dashboard`} className="hover:underline">Durham Brands</a>. All Rights Reserved.</span>
 
-            
+
          </aside>
       </main>
 

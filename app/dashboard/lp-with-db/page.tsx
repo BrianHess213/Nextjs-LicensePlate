@@ -7,6 +7,13 @@ import ItemComponent from '@/components/LP-With-DB/Item';
 import MonthColorUpdaterPage from "@/components/DB_MonthColorUpdater";
 import YearColorUpdaterPage from "@/components/DB_YearColorUpdater";
 import ReloadPages from "@/components/ReloadPage";
+import { Button } from "flowbite-react";
+
+import 'dotenv/config'
+
+
+const BaseURL = process.env.BASE_URL;
+
 
 import { getXataClient } from "@/src/xata"
 const xata = getXataClient();
@@ -31,7 +38,12 @@ export default async function Create({
 
     const numGTIN = + query;
     console.log("This is on the Main Page Search", numGTIN)
-    records = await xata.db.ItemSKU.filter({ Case_GTIN: numGTIN || 0 }).getMany();
+    records = await xata.db.ItemSKU.filter({
+      $any: {
+        Item_Name: numGTIN,
+        Case_GTIN: numGTIN,
+      },
+    }).getMany();
 
     return (
       <main className="py-10">
@@ -91,11 +103,19 @@ export default async function Create({
 
   } catch (error) {
 
-    //    // Handle the error if one occurs
-    // console.error('An error occurred:');
-    // // Optionally, you might want to assign a default value to records in case of an error
-    // records = [0]; // or set to null or any other appropriate value
-    // console.log("Records Value", records);
+    console.error('Failed to fetch item data:', error);
+    return (
+        <main className="flex justify-center h-full items-center">
+            <div className="grid grid-cols-1 gap-5">
+                <h1 className="text-xl text-red-500 text-center">Failed To Fetch Item Data</h1>
+                <h1 className="text-xl text-red-500 text-center">Click Return Button to go back to the previous page</h1>
+
+
+                <Button href={`${BaseURL}/dashboard/lp-with-db`} pill>Return</Button>
+
+            </div>
+        </main>
+    );
 
 
 

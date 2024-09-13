@@ -33,7 +33,14 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
 
         let Item = +query;
 
-        const records = await xata.db.ItemSKU.filter({ Item_Name: Item || 0 }).getMany();
+        // const records = await xata.db.ItemSKU.filter({ Item_Name: Item || 0 }).getMany();
+
+        const records = await xata.db.ItemSKU.filter({
+            $any: {
+              Item_Name: Item,
+              Case_GTIN: Item,
+            },
+          }).getMany();
 
 
         console.log(records);
@@ -46,7 +53,7 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
         const imageUrl = records && records.length > 0 && records[0].Image && records[0].Image.length > 0 ? records[0].Image[0].url : '';
 
         return (
-            <main className="py-10 px-5">
+            <main className="py-20 px-5">
                     <h1 className="flex justify-center text-2xl py-5 ">Search Item</h1>
 
                 <SearchBar placeholder="Search Item Here!" />
@@ -73,12 +80,6 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                                 <TableCell>{records[0].Case_GTIN}</TableCell>
                                 <TableCell>{records[0].Case_Pack_QTY}</TableCell>
                                 <TableCell>{records[0].id}</TableCell>
-                                <TableCell>
-                                    <a href={`${BaseURL}/dashboard/DeleteItem`} className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
-                                        Edit
-                                    </a>
-
-                                </TableCell>
                             </TableRow>
                             <TableRow className="bg-white dark:border-gray-700 dark:bg-gray-800">
                             </TableRow>
@@ -108,7 +109,7 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                     <CreateItemPage />
                 </div>
 
-                <div className="my-20">
+                <div className="">
                     <h1 className="flex justify-center text-2xl py-5">Delete Item</h1>
                     <DeleteItemPage />
                 </div>

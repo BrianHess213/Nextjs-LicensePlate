@@ -33,6 +33,7 @@ export default function Search({ placeholder }: { placeholder: string }) {
                     handleSearch(e.target.value);
                 }}
                 defaultValue={searchParams.get('item')?.toString()}
+                autoFocus
             />
             <div className="absolute left-3 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-gray-500 peer-focus:text-gray-900">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
