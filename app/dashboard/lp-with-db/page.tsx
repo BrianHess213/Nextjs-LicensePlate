@@ -56,7 +56,7 @@ export default async function Create({
           <div className="mb-6">
             <ItemComponent placeholder='Scan box barcode!' />
 
-            <div className="text-6xl">
+            <div className="text-5xl">
               {records[0].Item_Name}
             </div>
 
