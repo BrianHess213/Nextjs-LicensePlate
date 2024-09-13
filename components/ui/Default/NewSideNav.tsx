@@ -9,9 +9,10 @@ export default async function sideNav() {
 
 
    return (
-      <main className="print:hidden flex min-h-screen flex-col p-6">
+      <main className="print:hidden">
 
-         <aside id="logo-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-slate-950 border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+         <aside id="logo-sidebar" className="fixed left-0 z-40 w-64 min-h-full pt-10 transition-transform -translate-x-full bg-slate-950 border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+            <h1 className="text-2xl border-b-2 text-white pl-6 pb-3">Durham Brands</h1>
             <div className="h-full px-3 pb-4 overflow-y-auto ">
                <ul className="space-y-2 font-medium ">
                   <li>
@@ -50,8 +51,14 @@ export default async function sideNav() {
                      </Suspense>
 
                   </div>
+                  
                </ul>
+               
             </div>
+
+            <span className="fixed bottom-1 p-3 block text-sm text-gray-200 sm:text-center dark:text-gray-400">© 2023 <a href={`${BaseURL}/dashboard`} className="hover:underline">Durham Brands</a>. All Rights Reserved.</span>
+
+            
          </aside>
       </main>
 

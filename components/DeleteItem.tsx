@@ -75,11 +75,11 @@ export default function DeleteItemPage() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <div className='flex justify-center w-full'>
+            <div className='flex lg:justify-center pl-14 lg:pl-0 w-1/2 lg:w-full'>
 
                 <div className='flex'>
                     
-                        <input id="Item" className='flex w-96 rounded-l-lg bg-gray-100' type="string" placeholder="Enter Record ID" value={ItemID} onChange={(e) => setItem(e.target.value)} />
+                        <input id="Item" className='flex lg:w-96 rounded-l-lg bg-gray-100' type="string" placeholder="Enter Record ID" value={ItemID} onChange={(e) => setItem(e.target.value)} />
                   
 
                     <div>

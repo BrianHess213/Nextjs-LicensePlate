@@ -46,7 +46,7 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
         const imageUrl = records && records.length > 0 && records[0].Image && records[0].Image.length > 0 ? records[0].Image[0].url : '';
 
         return (
-            <main className="py-10">
+            <main className="py-10 px-5">
                     <h1 className="flex justify-center text-2xl py-5 ">Search Item</h1>
 
                 <SearchBar placeholder="Search Item Here!" />
@@ -108,7 +108,7 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                     <CreateItemPage />
                 </div>
 
-                <div className="mt-20">
+                <div className="my-20">
                     <h1 className="flex justify-center text-2xl py-5">Delete Item</h1>
                     <DeleteItemPage />
                 </div>
