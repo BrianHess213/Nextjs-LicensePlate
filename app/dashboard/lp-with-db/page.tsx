@@ -56,11 +56,11 @@ export default async function Create({
           <div className="mb-6">
             <ItemComponent placeholder='Scan box barcode!' />
 
-            <div className="text-5xl">
+            <div className="text-6xl">
               {records[0].Item_Name}
             </div>
 
-            <div className='flex justify-center pt-1'>
+            <div className='flex justify-center pt-6'>
 
               <Image
                 src={`https://barcode.orcascan.com/?data=${numGTIN}`}

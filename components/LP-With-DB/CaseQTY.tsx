@@ -18,12 +18,12 @@ const CaseQTY = () => {
           id="case-qty-input"
           value={caseQty}
           onChange={handleCaseQtyChange}
-          className="text-4xl rounded-lg border-none block w-full p-2.5 text-center"
+          className="text-6xl rounded-lg border-none block w-full text-center"
           placeholder="Cases on Pallet"
           required
         />
       </div>
-      <div className="flex justify-center pt-1">
+      <div className="flex justify-center">
         <Image
           src={`https://barcode.orcascan.com/?data=${caseQty || 0}`}
           unoptimized
