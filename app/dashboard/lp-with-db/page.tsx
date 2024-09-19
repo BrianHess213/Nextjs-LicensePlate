@@ -63,7 +63,7 @@ export default async function Create({
             <div className='flex justify-center pt-6'>
 
               <Image
-                src={`https://barcode.orcascan.com/?data=${numGTIN}`}
+                src={`https://barcode.orcascan.com/?data=${records[0].Case_GTIN}`}
                 unoptimized
                 width={200}
                 height={200}
