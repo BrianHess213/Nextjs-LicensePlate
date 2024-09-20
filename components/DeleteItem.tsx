@@ -19,7 +19,7 @@ export default function DeleteItemPage() {
         event.preventDefault();
 
         try {
-            const { data } = await axios.post('http://localhost:3000/api/deleteitem', {
+            const { data } = await axios.post(`https://nextjs-license-plate.vercel.app/api/deleteitem`, {
                 Item_Name: ItemID
 
             }, {

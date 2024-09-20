@@ -29,7 +29,9 @@ export default function CreateItemPage() {
         event.preventDefault();
 
         try {
-            const { data } = await axios.post('http://localhost:3000/api/additem', {
+
+            let URL = "https://nextjs-license-plate.vercel.app"
+            const { data } = await axios.post(`https://nextjs-license-plate.vercel.app/api/additem`, {
                 Item_Name: item,
                 Description: description,
                 Case_Pack_QTY: casePackQTY,
