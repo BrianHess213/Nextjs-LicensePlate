@@ -63,7 +63,8 @@ export default function Header() {
       <NavbarCollapse>
         <NavbarLink href={`${BaseURL}/dashboard/lp-without-db`} className='text-white'>License Plate</NavbarLink>
           <NavbarLink href={`${BaseURL}/dashboard/lp-with-db`} className='text-white'>DB Licenes Plate</NavbarLink>
-          <NavbarLink href={`${BaseURL}/dashboard/ItemSetup`} className='text-white'>Item Search</NavbarLink>
+          <NavbarLink href={`${BaseURL}/dashboard/itemsearch`} className='text-white'>Item Search</NavbarLink>
+          <NavbarLink href={`${BaseURL}/dashboard/itemsetup`} className='text-white'>Item Search</NavbarLink>
       </NavbarCollapse>
     </Navbar>
   );
