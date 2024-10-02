@@ -3,7 +3,6 @@ import UserProfilePic from '@/components/User/user-profilepic';
 import UserName from '@/components/User/user-name';
 import UserEmail from '@/components/User/user-email';
 import UserProfile from '@/components/User/user-shortmenu-profile';
-import HeaderSearchBarPage from '@/components/HeaderSearchBar';
 import { Suspense } from "react";
 import 'dotenv/config'
 
