@@ -117,7 +117,7 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                     <h1 className="text-xl text-red-500 text-center">Item Doesnt Exist Try Typing It In Again Or Adding The New Item.</h1>
 
 
-                    <Button href={`${BaseURL}/dashboard/ItemSetup`} pill>Return</Button>
+                    <Button href={`${BaseURL}/dashboard/itemsearch`} pill>Return</Button>
 
                 </div>
             </main>
