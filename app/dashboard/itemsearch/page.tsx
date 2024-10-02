@@ -104,6 +104,8 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
                     )}
 
                 </div>
+
+            
             </main>
         );
     } catch (error) {
