@@ -113,8 +113,8 @@ export default async function ItemSearchPage({ searchParams }: SearchParams) {
         return (
             <main className="flex justify-center h-full items-center">
                 <div className="grid grid-cols-1 gap-5">
-                    <h1 className="text-xl text-red-500 text-center">Failed To Fetch Item Data</h1>
-                    <h1 className="text-xl text-red-500 text-center">Item doesnt exist try typing it in again or request Item to be created</h1>
+                    <h1 className="text-xl text-red-500 text-center">Failed To Fetch Item Data.</h1>
+                    <h1 className="text-xl text-red-500 text-center">Item doesnt exist try typing it in again or request Item to be created.</h1>
 
 
                     <Button href={`${BaseURL}/dashboard/itemsearch`} pill>Return</Button>
