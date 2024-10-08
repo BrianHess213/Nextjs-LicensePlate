@@ -1,0 +1,116 @@
+// This is the old code for ItemSetup page I'm storing it here temp
+
+
+// import { getSession } from "@auth0/nextjs-auth0";
+// import CreateItemPage from "@/components/CreateItem";
+// import DeleteItemPage from "@/components/DeleteItem";
+// import ItemSetupAuthenticationPage from "@/components/ItemSetupAuthentication";
+// import { Alert, Button, Checkbox, Label, TextInput } from "flowbite-react";
+
+// import { getXataClient } from "@/src/xata"
+// const xata = getXataClient();
+
+
+
+// export default async function ItemSetupPage() {
+
+    
+
+//     const session = await getSession();
+
+//     const validEmails = ["ryanjohnston@durhambrands.com", "tylernelson@durhambrands.com", "brianhess@durhambrands.com"];
+
+//     const alwaysTrue = false;
+
+//     let changingEmail = "321";
+
+//     let changedEmail = changingEmail;
+
+//     //let values = getParameterValues(loginForm);
+
+  
+
+
+
+//     if (alwaysTrue === true) {
+
+//         if (validEmails.includes(session?.user?.email)) {
+//             return (
+//                 <div>
+//                     <div className="justify-center">
+//                         <div className="">
+//                             <h1 className="flex justify-center text-2xl py-5">Create Item</h1>
+//                         </div>
+
+//                         <div className="flex justify-center">
+//                             <div className="w-1/3">
+//                                 <CreateItemPage />
+//                             </div>
+//                         </div>
+
+//                     </div>
+
+//                     <div className="">
+//                         <h1 className="flex justify-center text-2xl py-5">Delete Item</h1>
+//                         <DeleteItemPage />
+//                     </div>
+//                 </div>
+
+//             )
+
+//         } else {
+
+//             // This else will never be used it should be used below with the login if you want an error message to pop up if the user get to many wrong attemps
+//             // leaving it here just in case so I don't have to rewrite it later if I decide to use it again
+
+//             return (
+//                 <div className="flex justify-center h-screen items-center">
+
+//                     <Alert className="p-5" color="failure">
+//                         <div className="pb-5">
+//                             <span className="text-lg">Email didnt match authorized users click button below to return</span>
+//                         </div>
+
+//                         <Button pill href="/dashboard/lp-with-db" className="">Return</Button>
+//                     </Alert>
+//                 </div>
+//             )
+//         }
+
+//     } else {
+
+    
+
+//         return (
+
+//             <main>
+
+//             <div className="flex h-screen justify-center items-center">
+//                 <form id="loginForm" className="flex-col w-1/4">
+//                     <div>
+//                         <div className="mb-2 block py-1">
+//                             <Label htmlFor="email1" value="Email" />
+//                         </div>
+//                         <TextInput id="email1" type="email" placeholder="name@flowbite.com" required />
+//                     </div>
+//                     <div>
+//                         <div className="mb-2 block py-1">
+//                             <Label htmlFor="password1" value="Password" />
+//                         </div>
+//                         <TextInput id="password1" type="password" required />
+//                     </div>
+//                     <div className="flex justify-center py-4">
+//                         <Button className="w-1/3" type="submit">Submit</Button>
+//                     </div>
+
+//                     <h1>Email: {changedEmail}</h1>
+
+//                 </form>
+
+//             </div>
+//         </main>
+
+//         )
+
+//     }
+// }
